@@ -1,0 +1,10 @@
+.site-section.banner {
+    background-color: rgb(42, 108, 86);
+}
+
+.container {
+    max-width: 1366px;
+    border: 1px solid black;
+    margin: 0 auto;
+    text-align: center;
+}
