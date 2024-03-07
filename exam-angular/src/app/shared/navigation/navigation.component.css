@@ -1,0 +1,13 @@
+.site-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-header nav ul {
+    display: flex;
+    gap: 1em;
+}
+
+nav li {
+    list-style: none outside;
+}

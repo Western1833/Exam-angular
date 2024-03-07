@@ -1,0 +1,9 @@
+.container-last-three {
+    margin: 2em 0 0 2em;
+}
+
+.products {
+    display: flex;
+    gap: 1em;
+    margin-top: 2em;
+}
