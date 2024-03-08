@@ -1,13 +1,28 @@
 .site-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0.8em 2em 0.8em 2em;
+    background-color: rgb(165, 230, 230);
 }
 
 .site-header nav ul {
     display: flex;
-    gap: 1em;
+    gap: 2em;
 }
 
 nav li {
     list-style: none outside;
+    font-size: 18px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: black;
+}
+
+.site-logo a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
 }
