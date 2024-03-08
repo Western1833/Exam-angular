@@ -11,6 +11,11 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: filter 0.3s ease;
+}
+
+.card img:hover {
+    filter: brightness(0.8);
 }
 
 .card ul {
@@ -21,4 +26,17 @@
 
 .card ul li {
     text-align: left;
+}
+
+.btn button {
+    padding: 0.2em 1em 0.2em 1em;
+    margin-bottom: 0.3em;
+    border: none;
+    border-radius: 0.4em;
+}
+
+.btn button:hover {
+    cursor: pointer;
+    background-color: #534f41;
+    color: #FFF;
 }
