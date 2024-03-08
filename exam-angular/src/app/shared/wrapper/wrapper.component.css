@@ -1,6 +1,9 @@
 .site-section.banner {
-    background-color: rgb(42, 108, 86);
-    min-height: 80vh;
+    background: rgb(203,208,209);
+    background: linear-gradient(0deg, rgba(203,208,209,1) 0%, rgba(237,234,189,1) 94%);
+    height: 500px;
+    display: flex;
+    align-items: center;
 }
 
 .site-section {
@@ -9,7 +12,6 @@
 
 .container {
     max-width: 1366px;
-    border: 1px solid black;
     margin: 0 auto;
     text-align: center;
     display: flex;

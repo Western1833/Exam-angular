@@ -1,8 +1,24 @@
 .card {
     border: 1px solid black;
     border-radius: 0.4rem;
+    max-width: 210px;
+    background-color: #bdb370;
+}
+
+.card img {
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .card ul {
     list-style: none;
+    padding: 0;
+    margin: 0.5em 1em 0.5em 0.2em;
+}
+
+.card ul li {
+    text-align: left;
 }

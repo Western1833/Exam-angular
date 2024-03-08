@@ -3,11 +3,10 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
-    padding-bottom: 0.3em;
-    padding-top: 0.3em;
-    background-color: rgb(165, 230, 230);
+    background-color: #534f41;
 }
 
 footer p {
     font-size: 18px;
+    line-height: 1;
 }
