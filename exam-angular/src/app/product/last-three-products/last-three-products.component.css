@@ -1,6 +1,9 @@
 .container-last-three {
     margin-top: 0;
     padding: 0;
+    background-color: rgba(176, 172, 172, 0.4);
+    border-radius: 0.4em;
+    padding: 2em;
 }
 
 .products {
