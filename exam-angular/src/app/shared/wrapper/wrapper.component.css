@@ -1,9 +1,8 @@
 .site-section.banner {
-    background: rgb(203,208,209);
-    background: linear-gradient(0deg, rgba(203,208,209,1) 0%, rgba(237,234,189,1) 94%);
-    height: 500px;
+    height: 82vh;
     display: flex;
     align-items: center;
+    background-color: #000015 ;
 }
 
 .site-section {

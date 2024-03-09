@@ -1,9 +1,13 @@
 .container-last-three {
     margin-top: 0;
     padding: 0;
-    background-color: rgba(176, 172, 172, 0.4);
-    border-radius: 0.4em;
+    background-color: rgba(173, 173, 173, 0.2);
+    border-radius: 0.8em;
     padding: 2em;
+}
+
+.container-last-three h4 {
+    color: #CCFF00;
 }
 
 .products {

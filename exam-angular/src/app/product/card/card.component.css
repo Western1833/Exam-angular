@@ -2,7 +2,7 @@
     border: 1px solid black;
     border-radius: 0.4rem;
     max-width: 210px;
-    background-color: #bdb370;
+    background-color: #333333;
 }
 
 .card img {
@@ -26,17 +26,19 @@
 
 .card ul li {
     text-align: left;
+    color: #d0cfcf;
 }
 
 .btn button {
-    padding: 0.2em 1em 0.2em 1em;
+    padding: 0.4em 1.5em 0.4em 1.5em;
     margin-bottom: 0.3em;
     border: none;
     border-radius: 0.4em;
+    transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
 }
 
 .btn button:hover {
     cursor: pointer;
-    background-color: #534f41;
-    color: #FFF;
+    background-color: #CCFF00;
+    padding: 0.4em 1.5em 0.4em 1.5em;
 }
