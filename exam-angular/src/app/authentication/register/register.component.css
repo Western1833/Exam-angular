@@ -1,4 +1,4 @@
-.login-form-container {
+.register-form-container {
     width: 32em;
     height: 32em;
     border-radius: 0.4em;
@@ -6,7 +6,7 @@
     background-position: center;
 }
 
-.login-form {
+.register-form {
     display: flex;
     flex-direction: column;
     background-color: rgb(157, 200, 239, 0.3);
@@ -18,7 +18,7 @@
     padding: 2em;
 }
 
-.login-form h3 {
+.register-form h3 {
     color: #CCFF00;
     margin-bottom: 1em;
 }
