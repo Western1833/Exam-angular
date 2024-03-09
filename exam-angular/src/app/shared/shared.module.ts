@@ -4,6 +4,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { ProductModule } from '../product/product.module';
+import { AuthenticationModule } from '../authentication/authentication.module';
 
 
 
@@ -15,7 +16,8 @@ import { ProductModule } from '../product/product.module';
   ],
   imports: [
     CommonModule,
-    ProductModule
+    ProductModule,
+    AuthenticationModule
   ],
   exports: [
     NavigationComponent,
