@@ -2,13 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8em 2em 0.8em 2em;
+    padding: 0.5em 0 0 1em;
     background-color: #121212 ;
 }
 
 .site-header nav ul {
     display: flex;
-    gap: 4em;
+    gap: 2em;
 }
 
 nav li {

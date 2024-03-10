@@ -1,0 +1,102 @@
+.createCar-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30em;
+    height: 33em;
+    border-radius: 0.4em;
+    background-image: url('/assets/for-edit-page.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.createCar-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.4em;
+    width: 32em;
+    height: 100%;
+    padding: 2em;
+}
+
+.createCar-form h3 {
+    color: #CCFF00;
+}
+
+#description {
+    resize: none;
+    border-radius: 0.3em;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 100%;
+}
+
+#car-brand, #car-model, #year{
+    width: 10em;
+    padding: 0.175em 0.7em;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+}
+
+#car-brand:hover, #car-model:hover, #year:hover{
+    cursor: pointer;
+    background-color: rgb(182, 181, 181);
+    outline: 2px solid #CCFF00;
+}
+
+input[type='number'] {
+    width: 11em;
+    border-radius: 0.3em;
+    padding: 0.3em 0.9em;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#phone-number, #price, #car-brand, #car-model, #year, #description {
+    border: none;
+    color: black;
+    transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+}
+
+#phone-number:focus, #price:focus, #car-brand:focus, #car-model:focus, #year:focus, #description:focus {
+    outline: 2px solid #CCFF00;
+    background-color: rgb(192, 190, 190);
+}
+
+.submit {
+    width: 100%;
+}
+
+.submit input {
+    width: 30%;
+    border: none;
+    height: 2.4em;
+    background-color: rgb(131, 174, 174);
+    border-radius: 0.3em;
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+}
+
+.submit input[type='submit']:hover {
+    background-color: #CCFF00;
+    cursor: pointer;
+}
