@@ -1,0 +1,111 @@
+.card {
+    border: 1px solid black;
+    border-radius: 0.4rem;
+    max-width: 410px;
+    min-height: 500px;
+    background-color: #333333;
+}
+
+.edit-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1.5px solid #CCFF00 ;
+    align-items: center;
+}
+
+.edit-functionalities {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#edit-content-wrapper {
+    margin: 0.5em 1em 0.5em 1em;
+    resize: none;
+    border-radius: 0.3em;
+}
+
+.likes {
+    margin: 0 1em 0em 1em;
+    display: flex;
+    align-items: center;
+    background-color: #666565;
+    margin-top: 0.5em;
+    width: 10em;
+    padding: 0.2em;
+    border-radius: 0.3em;
+}
+
+.likes label {
+    color: #d0cfcf;
+    margin-right: 0.3em;
+}
+
+.likes #likes {
+    width: 4em;
+    padding: 0;
+    background: none;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+}
+
+.likes button {
+    cursor: pointer;
+}
+
+.likes button {
+    width: 3.8em;
+    background: none;
+    border: none;
+}
+
+#comments-link {
+    text-decoration: none;
+    margin: 0.6em 1.5em 0 0;
+    color: #d0cfcf;
+    padding: 0.2em;
+}
+
+#comments-link:hover {
+    color: black;
+    background-color: #CCFF00;
+    padding: 0.2em;
+    border-radius: 0.4em;
+}
+
+.card img {
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card ul {
+    width: 80%;
+    list-style: none;
+    padding: 0;
+    margin: 0.5em 1em 0.5em 1em;
+}
+
+.card ul li {
+    font-size: 1.1em;
+    text-align: left;
+    color: #d0cfcf;
+}
+
+.btn button {
+    padding: 0.4em 1.5em 0.4em 1.5em;
+    margin-bottom: 0.3em;
+    border: none;
+    border-radius: 0.4em;
+    transition: background-color 0.5s ease, color 0.3s ease, padding 0.3s ease;
+}
+
+.btn button:hover {
+    cursor: pointer;
+    background-color: #CCFF00;
+    padding: 0.4em 1.5em 0.4em 1.5em;
+}

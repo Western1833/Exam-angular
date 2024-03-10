@@ -34,7 +34,7 @@
     margin-bottom: 0.3em;
     border: none;
     border-radius: 0.4em;
-    transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+    transition: background-color 0.5s ease, color 0.3s ease, padding 0.3s ease;
 }
 
 .btn button:hover {
