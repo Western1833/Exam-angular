@@ -7,6 +7,7 @@ import { EditComponent } from './edit/edit.component';
 import { DetailsComponent } from './details/details.component';
 import { CommentComponent } from './comment/comment.component';
 import { SingleCommentComponent } from './single-comment/single-comment.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SingleCommentComponent } from './single-comment/single-comment.componen
     SingleCommentComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     LastThreeProductsComponent,
