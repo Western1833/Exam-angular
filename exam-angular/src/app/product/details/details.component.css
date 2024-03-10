@@ -65,14 +65,15 @@
     text-decoration: none;
     margin: 0.6em 1em 0 0;
     color: #d0cfcf;
+    border-radius: 0.4em;
     padding: 0.2em;
+    transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
 }
 
 #edit-link:hover {
     color: black;
     background-color: #CCFF00;
     padding: 0.4em;
-    border-radius: 0.4em;
 }
 
 #comments-link {
@@ -80,13 +81,14 @@
     margin: 0.6em 1em 0 0;
     color: #d0cfcf;
     padding: 0.2em;
+    border-radius: 0.3em;
+    transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
 }
 
 #comments-link:hover {
     color: black;
     background-color: #CCFF00;
     padding: 0.2em;
-    border-radius: 0.4em;
 }
 
 .card img {
