@@ -1,0 +1,63 @@
+.comments-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(137, 136, 136, 0.4);
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 0.4em;
+    width: 100%;
+}
+
+.comments span {
+    color: #d0cfcf;
+}
+
+.comments textarea {
+    resize: none;
+    color: #000;
+    background-color: rgba(137, 136, 136, 0.4);
+    border-radius: 0.4em;
+    border: 1px solid black;
+}
+
+
+.no-comment-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5em;
+    border: 1px solid black;
+    border-radius: 0.4em;
+    padding: 1em;
+    margin-bottom: 0.5em;
+}
+
+.no-comment-div #addComment {
+    border-radius: 0.3em;
+    border: none;
+    padding: 0.3em;
+    transition: background-color 0.5s ease, color 0.3s ease, padding 0.3s ease;
+}
+
+.no-comment-div #addComment:hover {
+    background-color: #CCFF00;
+    cursor: pointer;
+}
+
+.no-comment-div textarea {
+    resize: none;
+    border-radius: 0.3em;
+    border: none;
+}
+
+.no-comment-div textarea:focus {
+    outline: 2px solid #CCFF00;
+}

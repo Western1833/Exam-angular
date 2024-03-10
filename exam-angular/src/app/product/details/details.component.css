@@ -1,16 +1,18 @@
 .card {
     border: 1px solid black;
     border-radius: 0.4rem;
-    max-width: 410px;
-    min-height: 500px;
+    max-width: 450px;
+    max-height: 535px;
     background-color: #333333;
+    overflow-y: auto;
 }
 
 .edit-content-wrapper {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1.5px solid #CCFF00 ;
+    border-bottom: 1.5px solid #CCFF00;
     align-items: center;
+    height: 110px;
 }
 
 .edit-functionalities {
@@ -61,31 +63,55 @@
     border: none;
 }
 
+#likes-btn {
+    background-color: #CCFF00;
+    border-radius: 0.3em;
+    color: #000000;
+}
+
+.popup {
+    position: absolute;
+    top: calc(60% + 10px); /* Place the popup just below the button */
+    left: 38%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: #646363;
+    border: 2px solid #ff0400;
+    border-radius: 5px;
+    max-height: 120px; /* Adjust the maximum height of the popup */
+    width: 200px;
+    overflow-y: auto;
+}
+
 #edit-link {
     text-decoration: none;
     margin: 0.6em 1em 0 0;
-    color: #d0cfcf;
+    color: #000000;
+    background-color: #d0cfcf;
     border-radius: 0.4em;
     padding: 0.2em;
+    width: 45px;
     transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+    text-align: center;
 }
 
 #edit-link:hover {
     color: black;
     background-color: #CCFF00;
-    padding: 0.4em;
+    padding: 0.2em;
 }
 
-#comments-link {
+#delete-link {
     text-decoration: none;
-    margin: 0.6em 1em 0 0;
-    color: #d0cfcf;
+    margin: 0.6em 1.5em 0 0;
+    color: #000000;
+    background-color: #d0cfcf;
     padding: 0.2em;
     border-radius: 0.3em;
     transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
 }
 
-#comments-link:hover {
+#delete-link:hover {
     color: black;
     background-color: #CCFF00;
     padding: 0.2em;
@@ -112,16 +138,44 @@
     color: #d0cfcf;
 }
 
-.btn button {
-    padding: 0.4em 1.5em 0.4em 1.5em;
-    margin-bottom: 0.3em;
-    border: none;
-    border-radius: 0.4em;
-    transition: background-color 0.5s ease, color 0.3s ease, padding 0.3s ease;
+.fieldset-container {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
 }
 
-.btn button:hover {
-    cursor: pointer;
-    background-color: #CCFF00;
-    padding: 0.4em 1.5em 0.4em 1.5em;
+.fieldset-container fieldset {
+    width: 100%;
+    border: 1px solid #CCFF00;
+    border-radius: 0.3em;
+}
+
+.fieldset-container fieldset legend {
+    margin: 0 auto;
+    color: #d0cfcf;
+    font-size: 1em;
+}
+
+.card::-webkit-scrollbar {
+    width: 8px;
+}
+
+.card::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.card::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.card::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.card::-webkit-scrollbar-thumb:active {
+    background: #333;
 }
