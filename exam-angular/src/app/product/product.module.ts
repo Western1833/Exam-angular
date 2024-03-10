@@ -6,6 +6,7 @@ import { LastThreeProductsComponent } from './last-three-products/last-three-pro
 import { EditComponent } from './edit/edit.component';
 import { DetailsComponent } from './details/details.component';
 import { CommentComponent } from './comment/comment.component';
+import { SingleCommentComponent } from './single-comment/single-comment.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CommentComponent } from './comment/comment.component';
     CreateCarFormComponent,
     EditComponent,
     DetailsComponent,
-    CommentComponent
+    CommentComponent,
+    SingleCommentComponent
   ],
   imports: [
     CommonModule

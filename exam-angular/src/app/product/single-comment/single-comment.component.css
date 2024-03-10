@@ -1,0 +1,41 @@
+.comments {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(137, 136, 136, 0.4);
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 0.4em;
+    width: 100%;
+}
+
+.comments span {
+    color: #d0cfcf;
+}
+
+.comments textarea {
+    resize: none;
+    color: #000;
+    background-color: rgba(137, 136, 136, 0.4);
+    border-radius: 0.4em;
+    border: 1px solid black;
+}
+
+.edit-comment-btns {
+    margin-top: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.edit-comment-btns button {
+    padding: 0.3em;
+    border: none;
+    border-radius: 0.3em;
+    transition: background-color 0.5s ease, color 0.3s ease, padding 0.3s ease;
+    background-color: #d0cfcf;
+}
+
+.edit-comment-btns button:hover {
+    background-color: #CCFF00;
+}
