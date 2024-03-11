@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl: 'https://my-angular-workshop-default-rtdb.firebaseio.com'
-};
+    url: 'https://my-angular-workshop-default-rtdb.firebaseio.com',
+}
