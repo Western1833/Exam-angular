@@ -11,8 +11,8 @@ export class GetAllCarsService {
   constructor(private http: HttpClient) { }
 
   getAllCars() {
-    const url = environment.apiUrl;
+    const {apiUrl} = environment;
 
-    return this.http.get<Car[]>(`${url}/cars.json`);
+    return this.http.get<Car[]>(`${apiUrl}/cars.json`);
   }
 }

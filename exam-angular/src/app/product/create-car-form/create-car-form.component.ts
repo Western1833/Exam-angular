@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AddCarService } from 'src/app/services/add-car.service';
 import { Car } from 'src/interfaces/car.interface';
 

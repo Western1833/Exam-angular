@@ -15,7 +15,7 @@ export class LastThreeProductsComponent implements OnInit {
   constructor(private api: LastThreeCarsService) { }
 
   ngOnInit(): void {
-    this.api.getLastThreeCars().subscribe((cars: any) => {
+    this.api.getLastThreeCars().subscribe((cars: Car[]) => {
       this.cars = Object.values(cars);
     })
   }
