@@ -1,20 +1,17 @@
 .allCars-wrapper {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    max-width: 100%;
-    max-height: 400px; /* Adjust the maximum height as needed */
-    /* justify-content: center;
-    overflow-y: auto; */
+    max-width: 900px;
+    max-height: 400px;
 }
 
 .car-row {
-    max-width: 85%;
+    max-width: 100%;
     max-height: 400px;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
+    flex-wrap: wrap;
     overflow-y: auto;
     gap: 1em;
 }

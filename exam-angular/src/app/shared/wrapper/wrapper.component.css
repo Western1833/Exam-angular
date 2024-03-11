@@ -2,18 +2,11 @@
     height: calc(100vh - 8.2em);
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: #000015 ;
     background-image: url('/assets/black-concrete-wall.jpg');
 }
 
 .site-section {
     padding: 2em;
-}
-
-.container {
-    max-width: 1366px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
