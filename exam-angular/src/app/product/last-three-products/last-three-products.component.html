@@ -2,8 +2,6 @@
     <h4>Last three added cars</h4>
     
     <div class="products">
-        <app-card/>
-        <app-card/>
-        <app-card/>
+        <app-card *ngFor="let car of cars" [car]="car"/>
     </div>
 </div>

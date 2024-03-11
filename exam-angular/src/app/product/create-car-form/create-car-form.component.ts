@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AddCarService } from 'src/app/services/add-car.service';
 import { Car } from 'src/interfaces/car.interface';
 
@@ -16,6 +16,7 @@ export class CreateCarFormComponent {
     price: null,
     description: '',
     phoneNumber: '',
+    timestamp: null
     // userId: '',
     // likes: [],
     // comments: []
@@ -25,6 +26,7 @@ export class CreateCarFormComponent {
 
   onSubmit() {
     if (this.isValidCar(this.car)) {
+      this.car.timestamp = new Date().getTime();
       this.addCarService.addCar(this.car).subscribe({
         next: () => { 
           this.car.brand = '';

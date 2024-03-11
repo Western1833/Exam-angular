@@ -6,6 +6,7 @@ export interface Car {
   price: number | null;
   description: string;
   phoneNumber: string;
+  timestamp: number | null
 //   userId: string;
 //   likes: string[]
 //   comments: {
