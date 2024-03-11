@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     background-color: #000015 ;
+    background-image: url('/assets/black-concrete-wall.jpg');
 }
 
 .site-section {

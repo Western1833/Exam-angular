@@ -29,7 +29,13 @@
     color: #d0cfcf;
 }
 
-.btn button {
+.btn-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-details button {
     padding: 0.4em 1.5em 0.4em 1.5em;
     margin-bottom: 0.3em;
     border: none;
@@ -37,7 +43,7 @@
     transition: background-color 0.5s ease, color 0.3s ease, padding 0.3s ease;
 }
 
-.btn button:hover {
+.btn-details button:hover {
     cursor: pointer;
     background-color: #CCFF00;
     padding: 0.4em 1.5em 0.4em 1.5em;

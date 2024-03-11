@@ -6,5 +6,5 @@ import { Component, Input} from '@angular/core';
   styleUrls: ['./single-comment.component.css']
 })
 export class SingleCommentComponent {
-  @Input() comment: string = '';
+  
 }

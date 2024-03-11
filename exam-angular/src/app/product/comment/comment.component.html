@@ -1,7 +1,7 @@
 <div class="no-comment-div">
     <div class="add-comment-wrapper">
-        <textarea [(ngModel)]="comment" name="add-comments" id="comments-txtArea" cols="25" rows="4"></textarea>
-        <button id="addComment" (click)="addComment()">Add comment</button>
+        <textarea  name="add-comments" id="comments-txtArea" cols="25" rows="4"></textarea>
+        <button id="addComment" >Add comment</button>
     </div>
-    <app-single-comment *ngIf="comment" [comment]="comment"/>
+    <app-single-comment/>
 </div>

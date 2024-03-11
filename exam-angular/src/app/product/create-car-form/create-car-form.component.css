@@ -82,11 +82,14 @@ input[type=number] {
     background-color: rgb(192, 190, 190);
 }
 
-.submit {
+.add-car-btn {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.submit input {
+.add-car-btn input {
     width: 30%;
     border: none;
     height: 2.4em;
@@ -96,7 +99,7 @@ input[type=number] {
     transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
 }
 
-.submit input[type='submit']:hover {
+.add-car-btn input[type='submit']:hover {
     background-color: #CCFF00;
     cursor: pointer;
 }

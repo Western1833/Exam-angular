@@ -8,6 +8,7 @@ import { DetailsComponent } from './details/details.component';
 import { CommentComponent } from './comment/comment.component';
 import { SingleCommentComponent } from './single-comment/single-comment.component';
 import { FormsModule } from '@angular/forms';
+import { AllCarsComponent } from './all-cars/all-cars.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     EditComponent,
     DetailsComponent,
     CommentComponent,
-    SingleCommentComponent
+    SingleCommentComponent,
+    AllCarsComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     CreateCarFormComponent,
     EditComponent,
     DetailsComponent,
-    CommentComponent
+    CommentComponent,
+    AllCarsComponent
   ]
 })
 export class ProductModule { }

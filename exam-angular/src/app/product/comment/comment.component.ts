@@ -6,13 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./comment.component.css']
 })
 export class CommentComponent {
-  comment: string = ''; // Variable to store the comment
-
-  onInputChange(event: any) {
-    this.comment = event.target.value;
-  }
-
-  addComment() {
-    this.comment = '';
-  }
+  
 }
