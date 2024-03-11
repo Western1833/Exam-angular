@@ -9,26 +9,31 @@ import { Car } from 'src/interfaces/car.interface';
 })
 export class CreateCarFormComponent {
   car: Car = {
+    image: '',
     brand: '',
     model: '',
     year: '',
     price: null,
     description: '',
     phoneNumber: '',
-    likes: [],
-    comments: []
+    // userId: '',
+    // likes: [],
+    // comments: []
   };
 
-  constructor(private addCarService: AddCarService) {}
+  constructor(private addCarService: AddCarService) { }
 
   onSubmit() {
-    // Validate the form fields
     if (this.isValidCar(this.car)) {
-      // Call the service method only if the form is valid
       this.addCarService.addCar(this.car).subscribe({
-        next: () => {
-          console.log('Car added successfully');
-          // Optionally, reset the form or perform other actions after adding the car
+        next: () => { 
+          this.car.brand = '';
+          this.car.description = '';
+          this.car.image = '';
+          this.car.model = '';
+          this.car.phoneNumber = '';
+          this.car.price = null;
+          this.car.year = '';
         },
         error: (err) => {
           console.error('Error adding car:', err);
@@ -39,16 +44,16 @@ export class CreateCarFormComponent {
     }
   }
 
-  // Method to validate the form fields
   private isValidCar(car: Car): boolean {
-    // Check if any of the required fields are empty
     return (
+      car.image.trim() !== '' &&
       car.brand.trim() !== '' &&
       car.model.trim() !== '' &&
       car.year.trim() !== '' &&
-      car.price !== null &&
+      car.price !== null && !isNaN(car.price) && car.price > 0 &&
       car.description.trim() !== '' &&
-      car.phoneNumber !== null
+      car.phoneNumber.trim() !== '' &&
+      !isNaN(Number(car.phoneNumber))
     );
   }
 }

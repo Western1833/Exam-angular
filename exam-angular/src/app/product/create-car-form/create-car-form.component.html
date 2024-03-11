@@ -2,6 +2,9 @@
     <form action="#" class="createCar-form" #carForm="ngForm" (ngSubmit)="onSubmit()">
         <h3>Add your car</h3>
         <div class="fields">
+            <div class="img-select">
+                <input type="text" id="image-select" placeholder="Image url..." [(ngModel)]="car.image" name="car-image">
+            </div>
             <div class="brand">
                 <select id="car-brand" name="car-brand" [(ngModel)]="car.brand">
                     <option value="">Select Brand</option>

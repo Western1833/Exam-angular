@@ -49,13 +49,13 @@
     transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
 }
 
-#car-brand:hover, #car-model:hover, #year:hover{
+#car-brand:hover, #car-model:hover, #year:hover {
     cursor: pointer;
     background-color: rgb(182, 181, 181);
     outline: 2px solid #CCFF00;
 }
 
-#phone-number, #price {
+#phone-number, #price, #image-select {
     width: 12em;
     border-radius: 0.3em;
     color: black;
@@ -82,7 +82,7 @@ input[type=number] {
     transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
 }
 
-#phone-number:focus, #price:focus, #car-brand:focus, #car-model:focus, #year:focus, #description:focus {
+#phone-number:focus, #price:focus, #car-brand:focus, #car-model:focus, #year:focus, #description:focus, #image-select:focus {
     outline: 2px solid #CCFF00;
     background-color: rgb(192, 190, 190);
 }
