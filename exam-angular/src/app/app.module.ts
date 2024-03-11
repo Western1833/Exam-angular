@@ -11,6 +11,7 @@ import { AdminModule } from './admin/admin.module';
 import { CartModule } from './cart/cart.module';
 import { ProductModule } from './product/product.module';
 import { ProfileModule } from './profile/profile.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProfileModule } from './profile/profile.module';
     CartModule,
     ProductModule,
     ProfileModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

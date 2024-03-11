@@ -55,10 +55,12 @@
     outline: 2px solid #CCFF00;
 }
 
-input[type='number'] {
-    width: 11em;
+#phone-number, #price {
+    width: 12em;
     border-radius: 0.3em;
-    padding: 0.3em 0.9em;
+    color: black;
+    border: none;
+    padding: 0.45em 1em;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -71,9 +73,12 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-#phone-number, #price, #car-brand, #car-model, #year, #description {
+#car-brand, #car-model, #year {
     border: none;
     color: black;
+    width: 11em;
+    border-radius: 0.3em;
+    padding: 0.3em 0.9em;
     transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
 }
 
