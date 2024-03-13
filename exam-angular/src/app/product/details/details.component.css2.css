@@ -1,3 +1,15 @@
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+aside span {
+    font-size: 1.1em;
+    color: #d0cfcf;
+}
+
 #edit-link {
     text-decoration: none;
     margin: 0.6em 1em 0 0;

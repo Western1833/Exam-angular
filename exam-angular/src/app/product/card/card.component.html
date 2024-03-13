@@ -1,11 +1,11 @@
 <div class="card">
-    <a href="#"><img src={{car.image}} alt="#"></a>
+    <a routerLink="/details"><img src={{car.image}} alt="car"></a>
     <ul>
         <li>Brand: {{car.brand}}</li>
         <li>Model: {{car.model}}</li>
         <li>Price: {{car.price}}$</li>
     </ul>
     <div class="btn-details">
-        <button>Details</button>
+        <button routerLink="/details/:id">Details</button>
     </div>
 </div>

@@ -9,7 +9,6 @@
 .register-form {
     display: flex;
     flex-direction: column;
-    background-color: rgb(157, 200, 239, 0.3);
     align-items: center;
     justify-content: center;
     border-radius: 0.4em;
@@ -96,7 +95,7 @@
 
 .message p {
     font-size: 1.2em;
-    color: black;
+    color: rgb(131, 174, 174);
 }
 
 .message a {
