@@ -8,13 +8,13 @@ import { Car } from 'src/interfaces/car.interface';
 })
 export class CardComponent {
   @Input() car: Car = {
-    image: 'https://cdn3.focus.bg/autodata/i/bmw/5er/5er-e60/large/e3cc377b35adf71eb67e8a8e977f93eb.jpg',
-    brand: 'BMW',
-    model: '530',
-    price: 7000,
+    'car-image': '',
+    'car-brand': '',
+    'car-model': '',
+    price: null,
     year: '',
     description: '',
-    phoneNumber: '',
+    'phone-number': '',
     timestamp: null
   };
 }

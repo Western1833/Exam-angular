@@ -10,7 +10,7 @@ export class AddCarService {
 
   constructor(private http: HttpClient) { }
 
-  addCar(car: Car): Observable<Car[]> {
+  addCar(car : Car): Observable<Car[]> {
     // Assuming you have an API endpoint for adding a car
     const apiUrl = 'https://my-angular-workshop-default-rtdb.firebaseio.com/cars.json';
     // You can modify this URL to match your backend API endpoint

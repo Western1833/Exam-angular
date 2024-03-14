@@ -1,11 +1,11 @@
 export interface Car {
-  image: string;
-  brand: string;
-  model: string;
+  'car-image': string;
+  'car-brand': string;
+  'car-model': string;
   year: string;
   price: number | null;
   description: string;
-  phoneNumber: string;
+  'phone-number': string;
   timestamp: number | null
 //   userId: string;
 //   likes: string[]

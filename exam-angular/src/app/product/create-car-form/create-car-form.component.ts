@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { AddCarService } from 'src/app/services/add-car.service';
 import { Car } from 'src/interfaces/car.interface';
 
@@ -9,13 +10,13 @@ import { Car } from 'src/interfaces/car.interface';
 })
 export class CreateCarFormComponent {
   car: Car = {
-    image: '',
-    brand: '',
-    model: '',
+    'car-image': '',
+    'car-brand': '',
+    'car-model': '',
     year: '',
     price: null,
     description: '',
-    phoneNumber: '',
+    'phone-number': '',
     timestamp: null
     // userId: '',
     // likes: [],
@@ -24,38 +25,33 @@ export class CreateCarFormComponent {
 
   constructor(private addCarService: AddCarService) { }
 
-  onSubmit() {
-    if (this.isValidCar(this.car)) {
-      this.car.timestamp = new Date().getTime();
-      this.addCarService.addCar(this.car).subscribe({
-        next: () => { 
-          this.car.brand = '';
-          this.car.description = '';
-          this.car.image = '';
-          this.car.model = '';
-          this.car.phoneNumber = '';
-          this.car.price = null;
-          this.car.year = '';
-        },
-        error: (err) => {
-          console.error('Error adding car:', err);
-        }
-      });
-    } else {
-      console.error('Form is not valid. Please fill in all required fields.');
-    }
-  }
+  onSubmit(form: NgForm) {
+    this.car.timestamp = new Date().getTime();
 
-  private isValidCar(car: Car): boolean {
-    return (
-      car.image.trim() !== '' &&
-      car.brand.trim() !== '' &&
-      car.model.trim() !== '' &&
-      car.year.trim() !== '' &&
-      car.price !== null && !isNaN(car.price) && car.price > 0 &&
-      car.description.trim() !== '' &&
-      car.phoneNumber.trim() !== '' &&
-      !isNaN(Number(car.phoneNumber))
-    );
+    const { 'car-image': carImage, 'car-brand': carBrand, 'car-model': carModel, year, price, description, 'phone-number': phoneNumber } = form.value;
+
+    console.log('car-image', 'car-brand', 'car-model', year, price, description, phoneNumber)
+
+    const carData: Car = {
+      'car-image': carImage,
+      'car-brand': carBrand,
+      'car-model': carModel,
+      year,
+      price,
+      description,
+      'phone-number': phoneNumber,
+      timestamp: this.car.timestamp
+    };
+
+    console.log(carData)
+
+    this.addCarService.addCar(carData).subscribe({
+      next: () => {
+       console.log('Car added: ', carData);
+      },
+      error: (err) => {
+        console.error('Error adding car:', err);
+      }
+    });
   }
 }
