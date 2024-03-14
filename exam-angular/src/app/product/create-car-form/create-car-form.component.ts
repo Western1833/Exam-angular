@@ -30,8 +30,6 @@ export class CreateCarFormComponent {
 
     const { 'car-image': carImage, 'car-brand': carBrand, 'car-model': carModel, year, price, description, 'phone-number': phoneNumber } = form.value;
 
-    console.log('car-image', 'car-brand', 'car-model', year, price, description, phoneNumber)
-
     const carData: Car = {
       'car-image': carImage,
       'car-brand': carBrand,
@@ -43,11 +41,17 @@ export class CreateCarFormComponent {
       timestamp: this.car.timestamp
     };
 
-    console.log(carData)
-
     this.addCarService.addCar(carData).subscribe({
       next: () => {
-       console.log('Car added: ', carData);
+        form.setValue({
+          'car-image': '', 
+          'car-brand': '', 
+          'car-model': '', 
+          'year': '', 
+          'price': null, 
+          'description': '', 
+          'phone-number': ''
+        });
       },
       error: (err) => {
         console.error('Error adding car:', err);

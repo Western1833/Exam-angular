@@ -1,7 +1,13 @@
 <div class="container-last-three">
-    <h4>Last three added cars</h4>
-    
-    <div class="products">
-        <app-card *ngFor="let car of cars" [car]="car"/>
+    <div class="if-cars" *ngIf="cars.length > 0">
+        <h4>Last three added cars</h4>
+
+        <div class="products">
+            <app-card *ngFor="let car of cars" [car]="car"/>
+        </div>
+    </div>
+
+    <div class="if-noCars" *ngIf="cars.length === 0">
+        <p>There are no cars added yet, to add a car please <a routerLink="/register">register</a>.</p>
     </div>
 </div>

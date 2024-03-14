@@ -17,6 +17,6 @@ export class LastThreeProductsComponent implements OnInit {
   ngOnInit(): void {
     this.api.getLastThreeCars().subscribe((cars: Car[]) => {
       this.cars = Object.values(cars);
-    })
+    });
   }
 }

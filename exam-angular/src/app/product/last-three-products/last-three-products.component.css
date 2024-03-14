@@ -19,3 +19,20 @@
     gap: 5em;
     margin-top: 1em;
 }
+
+.if-cars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.if-noCars p {
+    color: #d0cfcf;
+    font-size: 1.3em;
+}
+
+.if-noCars a {
+    color: #CCFF00;
+    text-decoration: none;
+    font-size: 1.1em;
+}
