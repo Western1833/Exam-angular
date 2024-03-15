@@ -103,3 +103,10 @@
     font-size: 1.3em;
     color: #CCFF00;
 }
+
+.fields .error{
+    color: red;
+    line-height: 1;
+    font-size: 1.2em;
+    margin: 0;
+}

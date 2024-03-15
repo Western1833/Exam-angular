@@ -1,14 +1,23 @@
 <div class="login-form-container">
-    <form action="#" class="login-form">
+    <form class="login-form" #loginForm="ngForm" (ngSubmit)="loginSubmitHandler(loginForm)">
         <h3>Login</h3>
         <div class="fields">
-            <input type="text" placeholder="Email...">
-            <input type="password" placeholder="Password...">
+            <input type="text" placeholder="Email..." name="email" id="email"
+             autocomplete="email" ngModel #inputEmail="ngModel" required
+             [appEmail]="[hello, directive]"
+             >
+            <ng-container *ngIf="inputEmail.touched">
+                <p class="error" *ngIf="inputEmail.errors?.['required']">Invalid email!</p>
+            </ng-container>
+            <input type="password" placeholder="Password..." name="password" id="password" ngModel #inputPassword="ngModel" required>
+            <ng-container>
+                <!-- <p class="error">Invalid email!</p> -->
+            </ng-container>
             <input type="submit" value="Login">
         </div>
         <div class="message">
             <p>Don't have an account?</p>
-            <a href="#">Sign up</a>
+            <a routerLink="/register">Sign up</a>
         </div>
     </form>
 </div>
