@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { FormsModule } from '@angular/forms';
-import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,10 +11,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule,
-    FormsModule,
-    SharedModule
-    ],
+    AppRoutingModule
+  ],
   exports: [
     LoginComponent,
     RegisterComponent
