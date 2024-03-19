@@ -1,5 +1,5 @@
-import { Directive } from '@angular/core';
-import { NG_VALIDATORS } from '@angular/forms';
+import { Directive, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@angular/forms';
 
 @Directive({
   selector: '[appEmail]',
@@ -11,8 +11,22 @@ import { NG_VALIDATORS } from '@angular/forms';
     }
   ]
 })
-export class EmailDirective {
+export class EmailDirective implements Validator, OnChanges{
+  @Input() appEmail: string = '';
 
   constructor() { }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    const {currentValue} = changes['appEmail'];
+
+    if(currentValue?.length){
+      this.validate(currentValue)
+    }
+  }
+
+  validate(control: AbstractControl): ValidationErrors | null {
+    const emailRegex = /^\w{3,}(\.\w+)*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]{2,}$/;
+    const isValid = emailRegex.test(control.value);
+    return isValid ? null : { invalidEmail: true };
+  }
 }
