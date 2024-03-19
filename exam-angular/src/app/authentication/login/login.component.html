@@ -1,14 +1,14 @@
 <div class="login-form-container">
-    <form action="#" class="login-form">
+    <form class="login-form" #form="ngForm" (ngSubmit)="login(form)">
         <h3>Login</h3>
         <div class="fields">
-            <input type="text" placeholder="Email...">
-            <input type="password" placeholder="Password...">
+            <input type="text" placeholder="Email..." name="email" ngModel #inputEmail="ngModel">
+            <input type="password" placeholder="Password..." name="password" ngModel #inputPassword="ngModel">
             <input type="submit" value="Login">
         </div>
         <div class="message">
             <p>Don't have an account?</p>
-            <a href="#">Sign up</a>
+            <a routerLink="/register">Sign up</a>
         </div>
     </form>
 </div>
