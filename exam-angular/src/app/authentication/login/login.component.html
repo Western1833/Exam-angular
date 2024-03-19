@@ -2,7 +2,10 @@
     <form class="login-form" #form="ngForm" (ngSubmit)="login(form)">
         <h3>Login</h3>
         <div class="fields">
-            <input type="text" placeholder="Email..." name="email" ngModel #inputEmail="ngModel">
+            <input type="text" placeholder="Email..." name="email" ngModel #inputEmail="ngModel" required>
+                <ng-container *ngIf="inputEmail.touched">
+                    <p class="error" *ngIf="inputEmail.errors?.['required']">Email is required</p>
+                </ng-container>
             <input type="password" placeholder="Password..." name="password" ngModel #inputPassword="ngModel">
             <input type="submit" value="Login">
         </div>
