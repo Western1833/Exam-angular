@@ -1,15 +1,16 @@
 <div class="register-form-container">
-    <form action="#" class="register-form">
+    <form class="register-form" [formGroup]="form" (ngSubmit)="register()">
         <h3>Registration</h3>
         <div class="fields">
-            <input type="text" placeholder="Email...">
-            <input type="password" placeholder="Password...">
-            <input type="password" placeholder="Repeat password...">
+            <input type="text" placeholder="Email..." id="email" name="email" autocomplete="email">
+            <input type="text" placeholder="Username..." id="username" name="username" autocomplete="username">
+            <input type="password" placeholder="Password..." id="password" name="password">
+            <input type="password" placeholder="Repeat password..." id="rePass" name="rePass">
             <input type="submit" value="Register">
         </div>
         <div class="message">
             <p>Already have an account?</p>
-            <a href="#">Sign in</a>
+            <a routerLink="/login">Sign in</a>
         </div>
     </form>
 </div>
