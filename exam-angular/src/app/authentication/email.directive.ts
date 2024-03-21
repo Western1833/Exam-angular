@@ -25,7 +25,7 @@ export class EmailDirective implements Validator, OnChanges{
   }
 
   validate(control: AbstractControl): ValidationErrors | null {
-    const emailRegex = /^\w{3,}(\.\w+)*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]{2,}$/;
+    const emailRegex = /^\w{2,}(\.\w+)*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]{2,}$/;
     const isValid = emailRegex.test(control.value);
     return isValid ? null : { invalidEmail: true };
   }
