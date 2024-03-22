@@ -16,8 +16,11 @@
             <ng-container formGroupName="passGroup">
                 <input type="password" placeholder="Password..." id="password" name="password" formControlName="password">
                 <input type="password" placeholder="Repeat password..." id="rePass" name="rePass" formControlName="rePass">
+                <ng-container *ngIf="form.get('passGroup')?.get('rePass')?.touched">
+                    <p class="error" *ngIf="form.get('passGroup')?.errors?.['matchPassValidator'] || form.get('passGroup')?.get('rePass')?.errors?.['required']">Repeat password field does not match password!</p>
+                </ng-container>
             </ng-container>
-            <input type="submit" value="Register">
+            <input type="submit" value="Register" [disabled]="form.invalid">
         </div>
         <div class="message">
             <p>Already have an account?</p>

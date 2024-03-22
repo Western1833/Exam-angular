@@ -1,10 +1,12 @@
-import { Directive } from '@angular/core';
+import { ValidatorFn } from "@angular/forms";
 
-@Directive({
-  selector: '[appPassMatching]'
-})
-export class PassMatchingDirective {
+export function matchPassValidator(passwordControlName: string, rePasswordControlName: string): ValidatorFn {
+  return (control) => {
+    const passwordFormControl = control.get(passwordControlName);
+    const rePasswordFormControl = control.get(rePasswordControlName);
 
-  constructor() { }
+    const areMatching = passwordFormControl?.value == rePasswordFormControl?.value;
 
+    return areMatching ? null : {matchPassValidator: true};
+  };
 }

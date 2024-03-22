@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { EmailDirective } from '../email.directive';
+import { matchPassValidator } from '../pass-matching-validator';
 
 
 @Component({
@@ -15,6 +16,8 @@ export class RegisterComponent {
     passGroup: this.fb.group({
       password: [],
       rePass: []
+    }, {
+      validators: [matchPassValidator('password', 'rePass')]
     })
   })
 
