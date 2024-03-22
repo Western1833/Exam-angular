@@ -9,8 +9,6 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent {
 
   login(form: NgForm) {
-    console.log('email: ', form.value.email);
-    console.log('password: ', form.value.password);
   }
 
 }

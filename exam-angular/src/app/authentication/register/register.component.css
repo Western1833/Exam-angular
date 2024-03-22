@@ -103,3 +103,11 @@
     font-size: 1.3em;
     color: #CCFF00;
 }
+
+.error {
+    color: red;
+    line-height: 1;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}

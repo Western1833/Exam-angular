@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { AbstractControl, FormBuilder, ValidationErrors, Validators } from '@angular/forms';
+import { EmailDirective } from '../email.directive';
+
 
 @Component({
   selector: 'app-register',
@@ -8,7 +10,12 @@ import { FormBuilder } from '@angular/forms';
 })
 export class RegisterComponent {
   form = this.fb.group({
-    //controls
+    email: ['', Validators.required],
+    username: ['', [Validators.required, Validators.minLength(4)]],
+    passGroup: this.fb.group({
+      password: [],
+      rePass: []
+    })
   })
 
   constructor(private fb: FormBuilder){}
@@ -19,5 +26,11 @@ export class RegisterComponent {
     }
 
     console.log(this.form.value)
+
   }
+
+  emailValidator(control: AbstractControl): ValidationErrors | null {
+    return EmailDirective.emailValidator(control); // Call the static emailValidator method
+  }
+
 }

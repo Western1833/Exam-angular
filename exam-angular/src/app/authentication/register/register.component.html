@@ -2,10 +2,21 @@
     <form class="register-form" [formGroup]="form" (ngSubmit)="register()">
         <h3>Registration</h3>
         <div class="fields">
-            <input type="text" placeholder="Email..." id="email" name="email" autocomplete="email">
-            <input type="text" placeholder="Username..." id="username" name="username" autocomplete="username">
-            <input type="password" placeholder="Password..." id="password" name="password">
-            <input type="password" placeholder="Repeat password..." id="rePass" name="rePass">
+            <input type="text" placeholder="Email..." id="email" name="email" autocomplete="email" formControlName="email" appEmail required>
+            <ng-container *ngIf="form.get('email')?.touched">
+                <p class="error" *ngIf="form.get('email')?.errors?.['required']">Email is required!</p>
+                <p class="error" *ngIf="form.get('email')?.value && form.get('email')?.errors?.['invalidEmail']">Email is not valid!</p>
+
+            </ng-container>
+            <input type="text" placeholder="Username..." id="username" name="username" autocomplete="username" formControlName="username" required="">
+            <ng-container *ngIf="form.get('username')?.touched">
+                <p class="error" *ngIf="form.get('username')?.errors?.['required']">Username is required!</p>
+                <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">Minimum 4 chars!</p>
+            </ng-container>
+            <ng-container formGroupName="passGroup">
+                <input type="password" placeholder="Password..." id="password" name="password" formControlName="password">
+                <input type="password" placeholder="Repeat password..." id="rePass" name="rePass" formControlName="rePass">
+            </ng-container>
             <input type="submit" value="Register">
         </div>
         <div class="message">
