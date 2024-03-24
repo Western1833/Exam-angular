@@ -14,7 +14,7 @@ export class RegisterComponent {
     email: ['', Validators.required],
     username: ['', [Validators.required, Validators.minLength(4)]],
     passGroup: this.fb.group({
-      password: [],
+      password: ['', [Validators.required, Validators.minLength(4)]],
       rePass: []
     }, {
       validators: [matchPassValidator('password', 'rePass')]
@@ -33,7 +33,7 @@ export class RegisterComponent {
   }
 
   emailValidator(control: AbstractControl): ValidationErrors | null {
-    return EmailDirective.emailValidator(control); // Call the static emailValidator method
+    return EmailDirective.emailValidator(control);
   }
 
 }

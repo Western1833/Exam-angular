@@ -14,8 +14,12 @@
                 <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">Minimum 4 chars!</p>
             </ng-container>
             <ng-container formGroupName="passGroup">
-                <input type="password" placeholder="Password..." id="password" name="password" formControlName="password">
-                <input type="password" placeholder="Repeat password..." id="rePass" name="rePass" formControlName="rePass">
+                <input type="password" placeholder="Password..." id="password" name="password" formControlName="password" required>
+                <ng-container *ngIf="form.get('passGroup.password')?.touched">
+                    <p class="error" *ngIf="form.get('passGroup.password')?.errors?.['required']">Password is required!</p>
+                    <p class="error" *ngIf="form.get('passGroup.password')?.errors?.['minlength']">Minimum 4 chars!</p>
+                </ng-container>
+                <input type="password" placeholder="Repeat password..." id="rePass" name="rePass" formControlName="rePass" required>
                 <ng-container *ngIf="form.get('passGroup')?.get('rePass')?.touched">
                     <p class="error" *ngIf="form.get('passGroup')?.errors?.['matchPassValidator'] || form.get('passGroup')?.get('rePass')?.errors?.['required']">Repeat password field does not match password!</p>
                 </ng-container>
