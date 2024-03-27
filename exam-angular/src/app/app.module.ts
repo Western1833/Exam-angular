@@ -12,6 +12,9 @@ import { CartModule } from './cart/cart.module';
 import { ProductModule } from './product/product.module';
 import { ProfileModule } from './profile/profile.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire/compat'
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
     ProductModule,
     ProfileModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
