@@ -14,7 +14,7 @@ import { ProfileModule } from './profile/profile.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { environment } from 'src/environments/environment';
+import { environment } from '../environments/environment.development';
 
 @NgModule({
   declarations: [

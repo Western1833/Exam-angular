@@ -12,7 +12,7 @@ export class AuthService {
     return this.afs.signInWithEmailAndPassword(user.email, user.password);
   }
 
-  registerWithEmailAndPassword(user: {email: string, password: string}) {
-    return this.afs.createUserWithEmailAndPassword(user.email, user.password);
+  registerWithEmailAndPassword(email: string, password: string) {
+    return this.afs.createUserWithEmailAndPassword(email, password);
   }
 }
