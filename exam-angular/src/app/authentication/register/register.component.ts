@@ -32,11 +32,12 @@ export class RegisterComponent {
 
     const {
       email,
-      passGroup: {password} = {}
+      passGroup: {password} = {},
+      username
     } = this.form.value;
 
 
-    this.authService.registerWithEmailAndPassword(email!, password!).then((res: any) => {
+    this.authService.registerWithEmailAndPassword(email!, password!, username!).then((res: any) => {
       console.log(res);
       this.router.navigateByUrl('/')
     }).catch((err: any) => {

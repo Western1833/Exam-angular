@@ -13,6 +13,7 @@ const routes: Routes = [{path: '', component: LastThreeProductsComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'add-car', component: CreateCarFormComponent},
   {path: 'details/:id', component: DetailsComponent},
+  {path: 'logout', redirectTo: '/login'},
 ];
 
 @NgModule({
