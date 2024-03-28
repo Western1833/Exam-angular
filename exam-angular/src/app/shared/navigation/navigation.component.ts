@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent implements OnInit{
 
-  public currentUser: firebase.User | null = null;
+  currentUser: firebase.User | null = null;
 
   constructor(private authService: AuthService, private router: Router) { }
 

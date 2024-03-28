@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment.development';
 import { Car } from 'src/interfaces/car.interface';
 
 @Injectable({
@@ -10,7 +11,6 @@ export class GetAllCarsService {
   constructor(private http: HttpClient) { }
   
   getAllCars() {
-    const url = 'https://my-angular-workshop-default-rtdb.firebaseio.com';
-    return this.http.get<Car[]>(`${url}/cars.json`);
+    return this.http.get<Car[]>(`${environment.firebaseConfig.databaseURL}/cars.json`);
   }
 }
