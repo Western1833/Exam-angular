@@ -14,7 +14,6 @@ export class LoginComponent {
 
   login(form: NgForm) {
     this.authService.loginWithEmailAndPassword(form.value).then((res: any) => {
-      console.log(res);
       this.router.navigateByUrl('/')
     }).catch((err: any) => {
       console.log(err)

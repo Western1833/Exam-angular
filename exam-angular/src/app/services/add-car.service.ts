@@ -12,7 +12,6 @@ export class AddCarService {
 
   constructor(private http: HttpClient, private cookieService: CookieService) { }
 
-  
   addCar(car : Car): Observable<Car[]> {
     const authToken = this.cookieService.get('firebaseAuthToken');
 
@@ -20,6 +19,7 @@ export class AddCarService {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${authToken}`
     });
-    return this.http.post<Car[]>(environment.firebaseConfig.databaseURL + '/cars.json', car, {headers});
+
+    return this.http.post<Car[]>(environment.firebaseConfig.databaseURL + `/cars.json`, car, {headers});
   }
 }
