@@ -17,12 +17,12 @@ export class NavigationComponent implements OnInit{
   ngOnInit(): void {
     this.authService.currentUser$.subscribe(user => {
       this.currentUser = user;
-      console.log(`User Info:`);
+    });
+  }
+
       // console.log(`  uid: ${this.currentUser!.uid}`);
       // console.log(`  email: ${this.currentUser!.email}`);
       // console.log(`  displayName: ${this.currentUser!.displayName}`);
-    });
-  }
 
   logout(): void {
     this.authService.logout().then(() => {

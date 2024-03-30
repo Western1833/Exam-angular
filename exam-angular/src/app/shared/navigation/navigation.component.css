@@ -28,6 +28,11 @@ nav li a {
     border-radius: 0.4em;
 }
 
+nav li span {
+    color: rgb(210, 209, 209);
+    padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
 nav li a:hover {
     background-color: #CCFF00;
     color: black;

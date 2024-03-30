@@ -38,7 +38,6 @@ export class RegisterComponent {
 
 
     this.authService.registerWithEmailAndPassword(email!, password!, username!).then((res: any) => {
-      console.log(res);
       this.router.navigateByUrl('/')
     }).catch((err: any) => {
       console.log(err)

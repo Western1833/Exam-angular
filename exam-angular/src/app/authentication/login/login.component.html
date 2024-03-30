@@ -2,7 +2,7 @@
     <form class="login-form" #form="ngForm" (ngSubmit)="login(form)">
         <h3>Login</h3>
         <div class="fields">
-            <input type="text" placeholder="Email..." name="email" ngModel #inputEmail="ngModel" [appEmail]="''" required>
+            <input type="text" placeholder="Email..." name="email" ngModel #inputEmail="ngModel" [appEmail]="''" autocomplete="email" required>
                 <ng-container *ngIf="inputEmail.touched">
                     <p class="error" *ngIf="inputEmail.errors?.['required']">Email is required!</p>
                     <p class="error" *ngIf="inputEmail.errors?.['invalidEmail'] && !inputEmail.errors?.['required']">Email is not valid!</p>

@@ -7,7 +7,7 @@ export interface Car {
   description: string;
   'phone-number': string;
   timestamp: number | null
-//   userId: string;
+ owner: string;
 //   likes: string[]
 //   comments: {
 //     comment: string;

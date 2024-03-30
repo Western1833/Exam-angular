@@ -15,6 +15,7 @@ export class CardComponent {
     year: '',
     description: '',
     'phone-number': '',
-    timestamp: null
+    timestamp: null,
+    owner: ''
   };
 }
