@@ -12,6 +12,6 @@ export class AddCarService {
   constructor(private http: HttpClient) { }
 
   addCar(car : Car): Observable<Car[]> {
-    return this.http.post<Car[]>(environment.firebaseConfig.databaseURL + `/cars.json`, car);
+    return this.http.post<Car[]>(`${environment.url}/data/cars`, car);
   }
 }

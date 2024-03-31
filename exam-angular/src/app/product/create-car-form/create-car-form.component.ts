@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AddCarService } from 'src/app/services/add-car.service';
 import { Car } from 'src/interfaces/car.interface';
-import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-create-car-form',
@@ -11,53 +10,47 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class CreateCarFormComponent {
   car: Car = {
-    'car-image': '',
-    'car-brand': '',
-    'car-model': '',
+    imageUrl: '',
+    brand: '',
+    model: '',
     year: '',
     price: null,
     description: '',
-    'phone-number': '',
+    phoneNumber: '',
     timestamp: null,
-    owner: '',
+    _ownerId: '',
     // likes: [],
     // comments: []
   };
 
-  constructor(private addCarService: AddCarService, private authService: AuthService) { }
+  constructor(private addCarService: AddCarService) { }
 
   onSubmit(form: NgForm) {
-    this.car.timestamp = new Date().getTime();
 
-    this.authService.currentUser$.subscribe(user => {
-      this.car.owner = user?.uid ? user.uid : '';
-    })
-
-
-    const { 'car-image': carImage, 'car-brand': carBrand, 'car-model': carModel, year, price, description, 'phone-number': phoneNumber } = form.value;
+    const { 'imageUrl': carImage, 'brand': carBrand, 'model': carModel, year, price, description, 'phoneNumber': phoneNumber } = form.value;
 
     const carData: Car = {
-      'car-image': carImage,
-      'car-brand': carBrand,
-      'car-model': carModel,
+      imageUrl: carImage,
+      brand: carBrand,
+      model: carModel,
       year,
       price,
       description,
-      'phone-number': phoneNumber,
+      phoneNumber: phoneNumber,
       timestamp: this.car.timestamp,
-      owner: this.car.owner
+      _ownerId: this.car._ownerId
     };
 
     this.addCarService.addCar(carData).subscribe({
       next: () => {
         form.setValue({
-          'car-image': '', 
-          'car-brand': '', 
-          'car-model': '', 
+          'imageUrl': '', 
+          'brand': '', 
+          'model': '', 
           'year': '', 
           'price': null, 
           'description': '', 
-          'phone-number': ''
+          'phoneNumber': ''
         });
       },
       error: (err) => {

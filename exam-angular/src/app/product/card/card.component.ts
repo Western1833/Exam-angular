@@ -8,14 +8,14 @@ import { Car } from 'src/interfaces/car.interface';
 })
 export class CardComponent {
   @Input() car: Car = {
-    'car-image': '',
-    'car-brand': '',
-    'car-model': '',
+    imageUrl: '',
+    brand: '',
+    model: '',
     price: null,
     year: '',
     description: '',
-    'phone-number': '',
+    phoneNumber: '',
     timestamp: null,
-    owner: ''
+    _ownerId: ''
   };
 }

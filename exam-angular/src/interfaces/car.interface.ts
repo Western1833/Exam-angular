@@ -1,13 +1,13 @@
 export interface Car {
-  'car-image': string;
-  'car-brand': string;
-  'car-model': string;
+  imageUrl: string;
+  brand: string;
+  model: string;
   year: string;
   price: number | null;
   description: string;
-  'phone-number': string;
+  phoneNumber: string;
   timestamp: number | null
- owner: string;
+  _ownerId: string;
 //   likes: string[]
 //   comments: {
 //     comment: string;

@@ -11,6 +11,6 @@ export class GetAllCarsService {
   constructor(private http: HttpClient) { }
   
   getAllCars() {
-    return this.http.get<Car[]>(`${environment.firebaseConfig.databaseURL}/cars.json`);
+    return this.http.get<Car[]>(`${environment.url}/data/cars`);
   }
 }

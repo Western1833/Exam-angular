@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, ValidationErrors, Validators } from '@angular/forms';
 import { EmailDirective } from '../email.directive';
 import { matchPassValidator } from '../pass-matching-validator';
-import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
 
@@ -23,26 +22,12 @@ export class RegisterComponent {
     })
   })
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router){}
+  constructor(private fb: FormBuilder, private router: Router){}
 
   register(): void{
     if(this.form.invalid){
       return;
     }
-
-    const {
-      email,
-      passGroup: {password} = {},
-      username
-    } = this.form.value;
-
-
-    this.authService.registerWithEmailAndPassword(email!, password!, username!).then((res: any) => {
-      this.router.navigateByUrl('/')
-    }).catch((err: any) => {
-      console.log(err)
-    })
-
   }
 
   emailValidator(control: AbstractControl): ValidationErrors | null {

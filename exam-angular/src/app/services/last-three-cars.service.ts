@@ -11,6 +11,6 @@ export class LastThreeCarsService {
   constructor(private http: HttpClient) { }
 
   getLastThreeCars() {
-    return this.http.get<Car[]>(`${environment.firebaseConfig.databaseURL}/cars.json?orderBy="timestamp"&limitToLast=3`);
+    return this.http.get<Car[]>(`${environment.url}/data/cars?sortBy=_createdOn desc&offset=0&pageSize=3`);
   }
 }
