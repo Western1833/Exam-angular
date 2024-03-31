@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, ValidationErrors, Validators } from '@ang
 import { EmailDirective } from '../email.directive';
 import { matchPassValidator } from '../pass-matching-validator';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -22,14 +23,18 @@ export class RegisterComponent {
     })
   })
 
-  constructor(private fb: FormBuilder, private router: Router){}
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService){}
 
   register(): void{
     if(this.form.invalid){
       return;
     }
 
-    
+    const {email, username, passGroup: {password, rePass} = {}} = this.form.value;
+
+    this.authService.register(email!, password!, username!).subscribe(() => {
+      this.router.navigate(['/login']);
+    })
   }
 
   emailValidator(control: AbstractControl): ValidationErrors | null {

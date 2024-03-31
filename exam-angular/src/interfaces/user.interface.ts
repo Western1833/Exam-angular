@@ -1,5 +1,7 @@
 export interface User {
     email: string,
     password: string,
-    repeatPassword: string | null,
+    username: string | null,
+    rePass: string | null,
+    accessToken: string | null
 }

@@ -13,6 +13,7 @@ import { ProductModule } from './product/product.module';
 import { ProfileModule } from './profile/profile.module';
 import { HttpClientModule } from '@angular/common/http'; //, provideHttpClient, withInterceptors
 import { AuthService } from './services/auth.service';
+import { appInterceptorProvider } from './app.interceptor';
 
 // import { bearerTokenInterceptor } from './app.interceptor';
 
@@ -33,7 +34,7 @@ import { AuthService } from './services/auth.service';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [AuthService], //, provideHttpClient(withInterceptors([bearerTokenInterceptor]))
+  providers: [AuthService, appInterceptorProvider], //, provideHttpClient(withInterceptors([bearerTokenInterceptor]))
   bootstrap: [AppComponent]
 })
 export class AppModule { }
