@@ -5,3 +5,9 @@ export interface User {
     rePass: string | null,
     accessToken: string | null
 }
+
+export interface UserForAuth {
+    email: string,
+    username: string,
+    password: string
+}

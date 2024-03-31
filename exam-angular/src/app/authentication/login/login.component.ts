@@ -17,16 +17,12 @@ export class LoginComponent {
 
     this.authService.login(email, password).subscribe(
       response => {
-        // Handle successful login
         console.log('Login successful', response);
-        localStorage.setItem('accessToken', response.accessToken!);
-        // Redirect to desired page
+        localStorage.setItem('userData', JSON.stringify(response));
         this.router.navigate(['/']);
       },
       error => {
-        // Handle error
         console.error('Login failed:', error);
-        // Show error message to user
       }
     );
   }
