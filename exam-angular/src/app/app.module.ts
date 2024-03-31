@@ -11,11 +11,13 @@ import { AdminModule } from './admin/admin.module';
 import { CartModule } from './cart/cart.module';
 import { ProductModule } from './product/product.module';
 import { ProfileModule } from './profile/profile.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'; //, provideHttpClient, withInterceptors
 import { AngularFireModule } from '@angular/fire/compat'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment.development';
 import { AuthService } from './services/auth.service';
+import { appInterceptorProvider } from './app.interceptor';
+// import { bearerTokenInterceptor } from './app.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import { AuthService } from './services/auth.service';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, appInterceptorProvider], //, provideHttpClient(withInterceptors([bearerTokenInterceptor]))
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,11 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": "auth != null",
+    "cars": {
+      ".indexOn": ["timestamp"],
+      ".read": true,
+      ".write": "auth != null"
+    }
+  }
+}
