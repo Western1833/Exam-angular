@@ -28,6 +28,8 @@ export class RegisterComponent {
     if(this.form.invalid){
       return;
     }
+
+    
   }
 
   emailValidator(control: AbstractControl): ValidationErrors | null {

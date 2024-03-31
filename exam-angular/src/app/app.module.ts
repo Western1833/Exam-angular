@@ -12,6 +12,7 @@ import { CartModule } from './cart/cart.module';
 import { ProductModule } from './product/product.module';
 import { ProfileModule } from './profile/profile.module';
 import { HttpClientModule } from '@angular/common/http'; //, provideHttpClient, withInterceptors
+import { AuthService } from './services/auth.service';
 
 // import { bearerTokenInterceptor } from './app.interceptor';
 
@@ -32,7 +33,7 @@ import { HttpClientModule } from '@angular/common/http'; //, provideHttpClient, 
     FormsModule,
     HttpClientModule,
   ],
-  providers: [], //, provideHttpClient(withInterceptors([bearerTokenInterceptor]))
+  providers: [AuthService], //, provideHttpClient(withInterceptors([bearerTokenInterceptor]))
   bootstrap: [AppComponent]
 })
 export class AppModule { }

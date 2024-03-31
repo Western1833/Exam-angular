@@ -7,8 +7,6 @@ import { ProductModule } from '../product/product.module';
 import { AuthenticationModule } from '../authentication/authentication.module';
 import { AppRoutingModule } from '../app-routing.module';
 
-
-
 @NgModule({
   declarations: [
     NavigationComponent,
@@ -19,7 +17,8 @@ import { AppRoutingModule } from '../app-routing.module';
     CommonModule,
     ProductModule,
     AuthenticationModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
   exports: [
     NavigationComponent,
