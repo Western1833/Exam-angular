@@ -1,10 +1,50 @@
+.edit-functionalities {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#edit-link {
+    text-decoration: none;
+    margin: 0.6em 1em 0 0;
+    color: #000000;
+    background-color: #d0cfcf;
+    border-radius: 0.4em;
+    padding: 0.2em;
+    width: 45px;
+    transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+    text-align: center;
+}
+
+#edit-link:hover {
+    color: black;
+    background-color: #CCFF00;
+    padding: 0.2em;
+}
+
+#delete-link {
+    text-decoration: none;
+    margin: 0.6em 1.5em 0 0;
+    color: #000000;
+    background-color: #d0cfcf;
+    padding: 0.2em;
+    border-radius: 0.3em;
+    transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+}
+
+#delete-link:hover {
+    color: black;
+    background-color: #CCFF00;
+    padding: 0.2em;
+}
+
 .likes {
     margin: 0 1em 0em 1em;
     display: flex;
     align-items: center;
     background-color: #666565;
     margin-top: 0.5em;
-    width: 10em;
+    width: 11em;
     padding: 0.2em;
     border-radius: 0.3em;
 }

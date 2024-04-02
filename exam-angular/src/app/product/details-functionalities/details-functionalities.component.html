@@ -1,0 +1,25 @@
+<div class="edit-functionalities">
+    <div class="likes">
+        <div *ngIf="showPopup" class="popup">
+            <ul>
+                <li>Comment 1</li>
+                <li>Comment 2</li>
+                <li>Comment 3</li>
+                <li>Comment 3</li>
+                <li>Comment 3</li>
+                <li>Comment 3</li>
+                <li>Comment 3</li>
+                <li>Comment 3</li>
+                <li>Comment 3</li>
+                <li>Comment 3</li>
+                <li>Comment 3</li>
+            </ul>
+        </div>
+        <button id="likes-btn" (click)="togglePopup()">Likes</button>
+        <input type="number" id="likes" disabled value="3000">
+        <button type="button" class="submit-with-icon">
+            <img src="../../../assets/thumbsup.png" alt="Like"></button>
+    </div>
+    <a href="#" id="edit-link">Edit</a>
+    <a href="#" id="delete-link">Delete</a>
+</div>

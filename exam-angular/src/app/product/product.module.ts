@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { AllCarsComponent } from './all-cars/all-cars.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { MyCarsComponent } from './my-cars/my-cars.component';
+import { DetailsFunctionalitiesComponent } from './details-functionalities/details-functionalities.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MyCarsComponent } from './my-cars/my-cars.component';
     SingleCommentComponent,
     AllCarsComponent,
     MyCarsComponent,
+    DetailsFunctionalitiesComponent,
   ],
   imports: [
     AppRoutingModule,

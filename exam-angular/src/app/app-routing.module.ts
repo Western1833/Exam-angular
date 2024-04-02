@@ -15,7 +15,7 @@ const routes: Routes = [{path: '', component: LastThreeProductsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'add-car', component: CreateCarFormComponent},
-  {path: 'details/:id', component: DetailsComponent},
+  {path: 'details', component: DetailsComponent},
   {path: 'logout', redirectTo: '/login'},
   {path: '**', component: Page404Component}
 ];

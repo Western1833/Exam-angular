@@ -31,7 +31,6 @@ export class NavigationComponent implements OnInit, OnDestroy {
       () => {
         this.userDataInStorage = null;
         localStorage.removeItem('userData');
-        this.router.navigate(['/login']);
       },
       error => {
         console.error('Logout failed:', error);
