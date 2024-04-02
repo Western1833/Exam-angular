@@ -20,7 +20,6 @@ export class NavigationComponent implements OnInit, OnDestroy {
     // Subscribe to authState$ observable to receive updates
     this.authSubscription = this.authService.authState$.subscribe(user => {
       this.userDataInStorage = user;
-      console.log('from navbar: ', this.userDataInStorage)
     });
   }
 
@@ -33,6 +32,7 @@ export class NavigationComponent implements OnInit, OnDestroy {
     this.authService.logout().subscribe(
       () => {
         this.userDataInStorage = null;
+        localStorage.removeItem('userData');
         this.router.navigate(['/login']);
       },
       error => {
