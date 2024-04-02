@@ -10,6 +10,7 @@ import { SingleCommentComponent } from './single-comment/single-comment.componen
 import { FormsModule } from '@angular/forms';
 import { AllCarsComponent } from './all-cars/all-cars.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { MyCarsComponent } from './my-cars/my-cars.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { AppRoutingModule } from '../app-routing.module';
     CommentComponent,
     SingleCommentComponent,
     AllCarsComponent,
+    MyCarsComponent,
   ],
   imports: [
     AppRoutingModule,
