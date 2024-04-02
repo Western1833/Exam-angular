@@ -12,7 +12,6 @@ export class AuthService {
     public authState$: Observable<UserForAuth | null> = this.authStateSubject.asObservable();
   
     constructor(private http: HttpClient) {
-      // Upon service initialization, try to retrieve user data from local storage
       const userDataString = localStorage.getItem('userData');
       if (userDataString) {
         const userData: UserForAuth = JSON.parse(userDataString);
@@ -34,11 +33,12 @@ export class AuthService {
   
     updateAuthState(user: UserForAuth | null): void {
       this.authStateSubject.next(user);
-      // Update local storage with user data upon authentication state change
       if (user) {
         localStorage.setItem('userData', JSON.stringify(user));
       } else {
         localStorage.removeItem('userData');
       }
     }
+
+    
   }

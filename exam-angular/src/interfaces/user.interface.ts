@@ -10,5 +10,6 @@ export interface UserForAuth {
     email: string,
     username: string,
     password: string,
-    accessToken: string
+    accessToken: string,
+    userId: string
 }

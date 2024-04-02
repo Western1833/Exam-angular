@@ -17,14 +17,12 @@ export class NavigationComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
-    // Subscribe to authState$ observable to receive updates
     this.authSubscription = this.authService.authState$.subscribe(user => {
       this.userDataInStorage = user;
     });
   }
 
   ngOnDestroy(): void {
-    // Unsubscribe from authState$ observable to prevent memory leaks
     this.authSubscription.unsubscribe();
   }
 

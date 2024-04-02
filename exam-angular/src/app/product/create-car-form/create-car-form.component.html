@@ -6,7 +6,7 @@
                 <input type="text" id="image-select" placeholder="Image url..." name="imageUrl" ngModel>
             </div>
             <div class="brand">
-                <select id="brand" name="brand" ngModel>
+                <select id="car-brand" name="brand" ngModel required>
                     <option value="">Select Brand</option>
                     <option value="Audi">Audi</option>
                     <option value="BMW">BMW</option>
@@ -23,17 +23,24 @@
             </div>
             
             <div class="model">
-                <select id="car-model" name="model" ngModel>
+                <select id="car-model" name="model" ngModel required>
                     <option value="">Select Model</option>
                     <option value="530">530</option>
                     <option value="E320">E320</option>
                     <option value="A6">A6</option>
                     <option value="Civic">Civic</option>
+                    <option value="6">6</option>
+                    <option value="Impreza">Impreza</option>
+                    <option value="Tundra">Tundra</option>
+                    <option value="308">308</option>
+                    <option value="Macan">Macan</option>
+                    <option value="Touareg">Touareg</option>
+                    <option value="Insignia">Insignia</option>
                 </select>
             </div>
 
             <div class="year">
-                <select id="year" name="year" ngModel>
+                <select id="year" name="year" ngModel required>
                     <option value="">Select Year</option>
                     <option value="1990">1990</option>
                     <option value="1991">1991</option>
@@ -74,18 +81,18 @@
             </div>
 
             <div class="price">
-                <input type="number" placeholder="Price" name="price" id="price" ngModel>
+                <input type="number" placeholder="Price" name="price" id="price" ngModel required>
             </div>
             
-            <textarea name="description" id="description" cols="35" rows="4" placeholder="Description..." ngModel></textarea>
+            <textarea name="description" id="description" cols="35" rows="4" placeholder="Description..." ngModel required></textarea>
 
             <div class="phone-number">
-                <input type="text" name="phone-number" id="phone-number" placeholder="Phone number..." ngModel>
+                <input type="text" name="phoneNumber" id="phone-number" placeholder="Phone number..." ngModel required>
             </div>
 
         </div>
             <div class="add-car-btn">
-                <input type="submit" value="Add Car">
+                <input type="submit" value="Add Car" [disabled]="!carForm.valid">
             </div>
     </form>
 </div>
