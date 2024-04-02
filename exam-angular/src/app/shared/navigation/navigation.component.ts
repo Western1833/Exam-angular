@@ -1,27 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { UserForAuth } from 'src/interfaces/user.interface';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
-export class NavigationComponent implements OnInit{
+export class NavigationComponent implements OnInit, OnDestroy {
+
+  userDataInStorage: UserForAuth | null = null;
+  private authSubscription!: Subscription;
 
   constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
-    
+    // Subscribe to authState$ observable to receive updates
+    this.authSubscription = this.authService.authState$.subscribe(user => {
+      this.userDataInStorage = user;
+      console.log('from navbar: ', this.userDataInStorage)
+    });
+  }
+
+  ngOnDestroy(): void {
+    // Unsubscribe from authState$ observable to prevent memory leaks
+    this.authSubscription.unsubscribe();
   }
 
   logout(): void {
-    this.authService.logout().subscribe(() => {
-      localStorage.removeItem('accessToken');
-      this.router.navigate(['/']);
-    },
-    error => {
-      console.error('Logout failed:', error);
-    })
+    this.authService.logout().subscribe(
+      () => {
+        this.userDataInStorage = null;
+        this.router.navigate(['/login']);
+      },
+      error => {
+        console.error('Logout failed:', error);
+      }
+    );
   }
 }

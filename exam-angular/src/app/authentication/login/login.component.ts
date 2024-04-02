@@ -16,9 +16,10 @@ export class LoginComponent {
     const {email, password} = form.value;
 
     this.authService.login(email, password).subscribe(
-      response => {
-        console.log('Login successful', response);
-        localStorage.setItem('userData', JSON.stringify(response));
+      user => {
+        console.log('Login successful', user);
+        localStorage.setItem('userData', JSON.stringify(user));
+        this.authService.updateAuthState(user)
         this.router.navigate(['/']);
       },
       error => {

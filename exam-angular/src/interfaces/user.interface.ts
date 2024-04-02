@@ -9,5 +9,6 @@ export interface User {
 export interface UserForAuth {
     email: string,
     username: string,
-    password: string
+    password: string,
+    accessToken: string
 }
