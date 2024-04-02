@@ -6,6 +6,7 @@ import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { CreateCarFormComponent } from './product/create-car-form/create-car-form.component';
 import { DetailsComponent } from './product/details/details.component';
+import { Page404Component } from './page404/page404.component';
 
 const routes: Routes = [{path: '', component: LastThreeProductsComponent},
   {path: 'catalog', component: AllCarsComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [{path: '', component: LastThreeProductsComponent},
   {path: 'add-car', component: CreateCarFormComponent},
   {path: 'details/:id', component: DetailsComponent},
   {path: 'logout', redirectTo: '/login'},
+  {path: '**', component: Page404Component}
 ];
 
 @NgModule({

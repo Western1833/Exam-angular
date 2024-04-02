@@ -11,15 +11,15 @@ import { AdminModule } from './admin/admin.module';
 import { CartModule } from './cart/cart.module';
 import { ProductModule } from './product/product.module';
 import { ProfileModule } from './profile/profile.module';
-import { HttpClientModule } from '@angular/common/http'; //, provideHttpClient, withInterceptors
+import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { appInterceptorProvider } from './app.interceptor';
-
-// import { bearerTokenInterceptor } from './app.interceptor';
+import { Page404Component } from './page404/page404.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    Page404Component,
   ],
   imports: [
     BrowserModule,
@@ -33,8 +33,9 @@ import { appInterceptorProvider } from './app.interceptor';
     ProfileModule,
     FormsModule,
     HttpClientModule,
+    
   ],
-  providers: [AuthService, appInterceptorProvider], //, provideHttpClient(withInterceptors([bearerTokenInterceptor]))
+  providers: [AuthService, appInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
