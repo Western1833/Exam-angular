@@ -1,2 +1,7 @@
 .error-page{
-text-align: center;}
+text-align: center;
+}
+
+.error-page img {
+    max-height: 500px;
+}
