@@ -18,8 +18,8 @@ export class CreateCarFormComponent {
     price: null,
     description: '',
     phoneNumber: '',
-    timestamp: null,
     _ownerId: '',
+    _id: ''
     // likes: [],
     // comments: []//
   };
@@ -28,13 +28,6 @@ export class CreateCarFormComponent {
 
 
   onSubmit(form: NgForm) {
-    const currentUser = localStorage.getItem('userData');
-    let userId: string | undefined;
-
-    if (currentUser) {
-      const userData = JSON.parse(currentUser);
-      userId = userData?._id;
-    }
 
     const { 'imageUrl': carImage, 'brand': carBrand, 'model': carModel, year, price, description, 'phoneNumber': phoneNumber } = form.value;
 
@@ -46,8 +39,8 @@ export class CreateCarFormComponent {
       price,
       description,
       phoneNumber: phoneNumber,
-      timestamp: Date.now(),
-      _ownerId: userId!
+      _ownerId: '',
+      _id: ''
     };
     console.log(carData)
 

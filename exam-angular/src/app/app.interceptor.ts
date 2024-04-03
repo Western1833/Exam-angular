@@ -19,12 +19,12 @@ class AppInterceptor implements HttpInterceptor{
             req = req.clone( {
                 url: `${environment.urlAuth}/logout`,
                 setHeaders: { 'X-Authorization': token || '' }
-            })
+            });
         }else if(req.url.endsWith('/cars') && req.method == 'POST') {
             req = req.clone({
                 url: `${environment.urlData}/cars`,
                 setHeaders: {'X-Authorization': token || '' }
-            })
+            });
         }
         console.log(req);
 

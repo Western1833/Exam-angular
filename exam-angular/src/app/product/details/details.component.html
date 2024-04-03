@@ -1,16 +1,16 @@
 <div class="card">
-    <img src="https://cdn3.focus.bg/autodata/i/bmw/5er/5er-e60/large/e3cc377b35adf71eb67e8a8e977f93eb.jpg" />
+    <img src={{carDetails?.imageUrl}}/>
     <div class="edit-content-wrapper">
         <ul>
-            <li>Brand: BMW</li>
-            <li>Model: 530d</li>
-            <li>Year: 2007</li>
-            <li>Price: 7000$</li>
+            <li>Brand: {{carDetails?.brand}}</li>
+            <li>Model: {{carDetails?.model}}</li>
+            <li>Year: {{carDetails?.year}}</li>
+            <li>Price: {{carDetails?.price}}$</li>
         </ul>
 
         <aside>
-            <textarea name="edit-textarea" id="edit-content-wrapper" cols="27" rows="4" disabled></textarea>
-            <span>Phone number: 0892739342</span>
+            <textarea name="edit-textarea" id="edit-content-wrapper" cols="27" rows="4" disabled>{{carDetails?.description}}</textarea>
+            <span>Phone number: {{carDetails?.phoneNumber}}</span>
         </aside>
     </div>
     <app-details-functionalities/>

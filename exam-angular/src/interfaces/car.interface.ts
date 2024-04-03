@@ -6,8 +6,8 @@ export interface Car {
   price: number | null;
   description: string;
   phoneNumber: string;
-  timestamp: number | null
   _ownerId: string;
+  _id: string;
 //   likes: string[]
 //   comments: {
 //     comment: string;
