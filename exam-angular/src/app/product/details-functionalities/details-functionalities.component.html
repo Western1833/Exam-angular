@@ -17,9 +17,9 @@
         </div>
         <button id="likes-btn" (click)="togglePopup()">Likes</button>
         <input type="number" id="likes" disabled value="3000">
-        <button type="button" class="submit-with-icon">
+        <button type="button" class="submit-with-icon" *ngIf="isAuthenticated">
             <img src="../../../assets/thumbsup.png" alt="Like"></button>
     </div>
-    <a href="#" id="edit-link">Edit</a>
-    <a href="#" id="delete-link">Delete</a>
+    <a routerLink="/edit" id="edit-link" *ngIf="isAuthenticated && isOwner">Edit</a>
+    <a id="delete-link" *ngIf="isAuthenticated && isOwner" (click)="onDelete()">Delete</a>
 </div>

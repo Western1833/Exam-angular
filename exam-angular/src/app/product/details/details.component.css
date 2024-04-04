@@ -19,6 +19,7 @@
     margin: 0.5em 1em 0.5em 1em;
     resize: none;
     border-radius: 0.3em;
+    color: #d0cfcf;
 }
 
 aside {
@@ -67,6 +68,7 @@ aside span {
     width: 100%;
     border: 1px solid #CCFF00;
     border-radius: 0.3em;
+    color: #908d8d;
 }
 
 .fieldset-container fieldset legend {

@@ -25,6 +25,10 @@ class AppInterceptor implements HttpInterceptor{
                 url: `${environment.urlData}/cars`,
                 setHeaders: {'X-Authorization': token || '' }
             });
+        }else if(req.method == 'DELETE') {
+            req = req.clone({
+                setHeaders: {'X-Authorization': token || '' }
+            });
         }
         console.log(req);
 
