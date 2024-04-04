@@ -1,5 +1,33 @@
 # ExamAngular
 
+!! To populate the site with cars navigate to server.js inside it search for 'cars' and just uncomment them. You will have to run the server again.
+
+To open the app:
+
+Run 'npm install' in terminal, then 'ng serve' to run angular and 'node server.js' for the server.
+
+Functionalities of the app:
+
+Application for car sales.
+
+On home page are displayed the last 3 added cars.
+
+Unauthozied user can see homepage, catalog, login, register, and details for each car, he can see the comments and likes for each car also but can't like or comment in order to do so he must make an account.
+
+Authorized user sees home, catalog, details with edit and delete buttons only if he is the creator of the ad, he can like a car unless its his own and he can comment, he also can see his own cars ads.
+
+
+
+
+
+
+
+
+
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
 
 ## Development server
