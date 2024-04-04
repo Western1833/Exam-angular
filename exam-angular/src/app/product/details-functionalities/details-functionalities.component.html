@@ -17,7 +17,7 @@
         </div>
         <button id="likes-btn" (click)="togglePopup()">Likes</button>
         <input type="number" id="likes" disabled [value]="totalLikes">
-        <button type="button" class="submit-with-icon" *ngIf="isAuthenticated && !isOwner" (click)="onLikeClick()">
+        <button type="button" class="submit-with-icon" *ngIf="isAuthenticated && !isOwner && !hasLiked" (click)="onLikeClick()">
             <img src="../../../assets/thumbsup.png" alt="Like"></button>
     </div>
     <a [routerLink]="['/edit', carDetails?._id]" id="edit-link" *ngIf="isAuthenticated && isOwner">Edit</a>

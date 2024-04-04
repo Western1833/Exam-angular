@@ -19,6 +19,10 @@ export class DetailsFunctionalitiesComponent implements OnChanges, OnInit {
   token: string = '';
   username: string = '';
   totalLikes: number = 0;
+  hasLiked: boolean = false;
+
+  //http://localhost:3030/data/likes?where=carId%3D%22a43aa49e-5e55-440d-9289-b460d3c1ec5d%22%20and%20_ownerId%3D%22d50d45e80f9eeeba37c309b028e81ed5efc9dab41fe216f668ed998915004afe%22&count
+
 
   constructor(private elementRef: ElementRef, private detailsService: DetailsService,
     private router: Router, private likesService: LikesService) { }
@@ -75,10 +79,21 @@ export class DetailsFunctionalitiesComponent implements OnChanges, OnInit {
   }
 
   private fetchTotalLikes(): void {
+    const userDataString = localStorage.getItem('userData');
+    const currentUser = JSON.parse(userDataString!);
+    const currentUserId = currentUser?._id;
     if (this.carDetails) {
       this.likesService.getAllLikes(this.carDetails._id).subscribe(objectLikes => {
         const likes = JSON.stringify(objectLikes);
         this.totalLikes = Number(likes);
+      });
+      this.likesService.hasLiked(this.carDetails._id, currentUserId).subscribe(res => {
+        console.log('res: ', res)
+        console.log('res: ', this.carDetails?._id)
+        console.log('res: ', currentUserId)
+        if(res !== 0){
+          this.hasLiked = true;
+        }
       });
     }
   }
