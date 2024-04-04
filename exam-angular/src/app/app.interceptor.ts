@@ -33,6 +33,11 @@ class AppInterceptor implements HttpInterceptor{
             req = req.clone({
                 setHeaders: {'X-Authorization': token || ''}
             })
+        }else if(req.url.endsWith('/likes')){
+            req = req.clone( {
+                url: `${environment.urlData}/likes`,
+                setHeaders: { 'X-Authorization': token || '' }
+            });
         }
         console.log(req);
 
