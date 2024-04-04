@@ -8,6 +8,7 @@ import { CreateCarFormComponent } from './product/create-car-form/create-car-for
 import { DetailsComponent } from './product/details/details.component';
 import { Page404Component } from './page404/page404.component';
 import { MyCarsComponent } from './product/my-cars/my-cars.component';
+import { EditComponent } from './product/edit/edit.component';
 
 const routes: Routes = [{path: '', component: LastThreeProductsComponent},
   {path: 'catalog', component: AllCarsComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [{path: '', component: LastThreeProductsComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'add-car', component: CreateCarFormComponent},
   {path: 'details/:id', component: DetailsComponent},
+  {path: 'edit/:id', component: EditComponent},
   {path: 'logout', redirectTo: '/login'},
   {path: '**', component: Page404Component}
 ];

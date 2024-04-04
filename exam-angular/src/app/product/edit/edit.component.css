@@ -40,13 +40,17 @@
     height: 100%;
 }
 
-#car-brand, #car-model, #year{
+#car-brand, #car-model, #year, #image-select{
     width: 10em;
     padding: 0.175em 0.7em;
     border-radius: 4px;
     font-family: inherit;
     font-size: 0.9rem;
     transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+}
+
+#image-select {
+    width: 19.5em;
 }
 
 #car-brand:hover, #car-model:hover, #year:hover{
@@ -71,13 +75,13 @@ input[type=number] {
     -moz-appearance: textfield;
 }
 
-#phone-number, #price, #car-brand, #car-model, #year, #description {
+#phone-number, #price, #car-brand, #car-model, #year, #description, #image-select {
     border: none;
     color: black;
     transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
 }
 
-#phone-number:focus, #price:focus, #car-brand:focus, #car-model:focus, #year:focus, #description:focus {
+#phone-number:focus, #price:focus, #car-brand:focus, #car-model:focus, #year:focus, #description:focus, #image-select:focus {
     outline: 2px solid #CCFF00;
     background-color: rgb(192, 190, 190);
 }

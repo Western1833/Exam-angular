@@ -20,6 +20,6 @@
         <button type="button" class="submit-with-icon" *ngIf="isAuthenticated">
             <img src="../../../assets/thumbsup.png" alt="Like"></button>
     </div>
-    <a routerLink="/edit" id="edit-link" *ngIf="isAuthenticated && isOwner">Edit</a>
+    <a [routerLink]="['/edit', carDetails?._id]" id="edit-link" *ngIf="isAuthenticated && isOwner">Edit</a>
     <a id="delete-link" *ngIf="isAuthenticated && isOwner" (click)="onDelete()">Delete</a>
 </div>
