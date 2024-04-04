@@ -2,17 +2,7 @@
     <div class="likes">
         <div *ngIf="showPopup" class="popup">
             <ul>
-                <li>Comment 1</li>
-                <li>Comment 2</li>
-                <li>Comment 3</li>
-                <li>Comment 3</li>
-                <li>Comment 3</li>
-                <li>Comment 3</li>
-                <li>Comment 3</li>
-                <li>Comment 3</li>
-                <li>Comment 3</li>
-                <li>Comment 3</li>
-                <li>Comment 3</li>
+                <li *ngFor="let username of usernames">{{username}}</li>
             </ul>
         </div>
         <button id="likes-btn" (click)="togglePopup()">Likes</button>
