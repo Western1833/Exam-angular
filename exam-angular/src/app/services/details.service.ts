@@ -20,4 +20,8 @@ export class DetailsService {
   delete(id: string): Observable<any> {
     return this.http.delete(`${environment.urlDetails}/${id}`);
   }
+
+  edit(id: string, Car: Car): Observable<any> {
+    return this.http.put(`${environment.urlDetails}/${id}`, Car);
+  }
 }
