@@ -9,15 +9,17 @@ import { DetailsComponent } from './product/details/details.component';
 import { Page404Component } from './page404/page404.component';
 import { MyCarsComponent } from './product/my-cars/my-cars.component';
 import { EditComponent } from './product/edit/edit.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { AuthGuardForAuthUsersService } from './services/auth-guard-for-auth-users.service';
 
 const routes: Routes = [{path: '', component: LastThreeProductsComponent},
   {path: 'catalog', component: AllCarsComponent},
-  {path: 'my-cars', component: MyCarsComponent},
+  {path: 'my-cars', component: MyCarsComponent, canActivate: [AuthGuardService]},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'add-car', component: CreateCarFormComponent},
+  {path: 'register', component: RegisterComponent, canActivate: [AuthGuardForAuthUsersService]},
+  {path: 'add-car', component: CreateCarFormComponent, canActivate: [AuthGuardService]},
   {path: 'details/:id', component: DetailsComponent},
-  {path: 'edit/:id', component: EditComponent},
+  {path: 'edit/:id', component: EditComponent, canActivate: [AuthGuardService]},
   {path: 'logout', redirectTo: '/login'},
   {path: '**', component: Page404Component}
 ];
