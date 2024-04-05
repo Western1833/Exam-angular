@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { DetailsService } from 'src/app/services/details.service';
 import { LikesService } from 'src/app/services/likes.service';
 import { Car } from 'src/interfaces/car.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { PopupForDeleteCarComponent } from '../popup-for-delete-car/popup-for-delete-car.component';
 
 @Component({
   selector: 'app-details-functionalities',
@@ -23,7 +25,7 @@ export class DetailsFunctionalitiesComponent implements OnChanges, OnInit {
   usernames: string[] = [];
 
   constructor(private elementRef: ElementRef, private detailsService: DetailsService,
-    private router: Router, private likesService: LikesService) { }
+    private router: Router, private likesService: LikesService, public dialog: MatDialog) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if ('carDetails' in changes) {
@@ -54,12 +56,26 @@ export class DetailsFunctionalitiesComponent implements OnChanges, OnInit {
     this.showPopup = !this.showPopup;
   }
 
+  openConfirmationDialog(): void {
+    const dialogRef = this.dialog.open(PopupForDeleteCarComponent, {
+      width: '450px',
+      data: 'Are you sure you want to delete this car?',
+      panelClass: 'wrapper-popup'
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.onDelete();
+      }
+    });
+  }
+
   onDelete() {
     const id = this.carDetails?._id;
     if (!id) {
       return;
     }
-    console.log('from component', id);
+
     this.detailsService.delete(id!).subscribe(() => {
       this.router.navigate(['/catalog']);
     })

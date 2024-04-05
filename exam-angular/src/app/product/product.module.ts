@@ -10,6 +10,8 @@ import { AllCarsComponent } from './all-cars/all-cars.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { MyCarsComponent } from './my-cars/my-cars.component';
 import { DetailsFunctionalitiesComponent } from './details-functionalities/details-functionalities.component';
+import { PopupForDeleteCarComponent } from './popup-for-delete-car/popup-for-delete-car.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -21,11 +23,13 @@ import { DetailsFunctionalitiesComponent } from './details-functionalities/detai
     AllCarsComponent,
     MyCarsComponent,
     DetailsFunctionalitiesComponent,
+    PopupForDeleteCarComponent,
   ],
   imports: [
     AppRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   exports: [
     LastThreeProductsComponent,

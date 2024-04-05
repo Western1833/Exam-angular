@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { appInterceptorProvider } from './app.interceptor';
 import { Page404Component } from './page404/page404.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,11 @@ import { Page404Component } from './page404/page404.component';
     SharedModule,
     CoreModule,
     AuthenticationModule,
-
     ProductModule,
     ProfileModule,
     FormsModule,
     HttpClientModule,
-    
+    BrowserAnimationsModule,
   ],
   providers: [AuthService, appInterceptorProvider],
   bootstrap: [AppComponent]

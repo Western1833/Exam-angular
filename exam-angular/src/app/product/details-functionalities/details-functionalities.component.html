@@ -11,5 +11,5 @@
             <img src="../../../assets/thumbsup.png" alt="Like"></button>
     </div>
     <a [routerLink]="['/edit', carDetails?._id]" id="edit-link" *ngIf="isAuthenticated && isOwner">Edit</a>
-    <a id="delete-link" *ngIf="isAuthenticated && isOwner" (click)="onDelete()">Delete</a>
+    <a id="delete-link" *ngIf="isAuthenticated && isOwner" (click)="openConfirmationDialog()">Delete</a>
 </div>
