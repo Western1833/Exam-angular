@@ -1,12 +1,12 @@
 <div class="createCar-form-container" *ngIf="carDetails">
-    <form class="createCar-form" (submit)="onSubmit()">
+    <form class="createCar-form" #carForm="ngForm" (submit)="onSubmit()">
         <h3>Edit car</h3>
         <div class="fields">
             <div class="img-select">
-                <input type="text" id="image-select" placeholder="Image url..." name="imageUrl" ngModel [(ngModel)]="carDetails.imageUrl">
+                <input type="text" id="image-select" placeholder="Image url..." name="imageUrl" ngModel [(ngModel)]="carDetails.imageUrl" required>
             </div>
             <div class="brand">
-                <select id="car-brand" name="car-brand" [(ngModel)]="carDetails.brand">
+                <select id="car-brand" name="car-brand" [(ngModel)]="carDetails.brand" required>
                     <option value="">Select Brand</option>
                     <option value="Audi">Audi</option>
                     <option value="BMW">BMW</option>
@@ -23,7 +23,7 @@
             </div>
             
             <div class="model">
-                <select id="car-model" name="car-model" [(ngModel)]="carDetails.model">
+                <select id="car-model" name="car-model" [(ngModel)]="carDetails.model" required>
                     <option value="">Select Model</option>
                     <option value="530">530</option>
                     <option value="E320">E320</option>
@@ -40,7 +40,7 @@
             </div>
 
             <div class="year">
-                <select id="year" name="year" [(ngModel)]="carDetails.year">
+                <select id="year" name="year" [(ngModel)]="carDetails.year" required>
                     <option value="">Select Year</option>
                     <option value="1990">1990</option>
                     <option value="1991">1991</option>
@@ -81,18 +81,18 @@
             </div>
 
             <div class="price">
-                <input type="number" placeholder="Price" name="price" id="price" [(ngModel)]="carDetails.price">
+                <input type="number" placeholder="Price" name="price" id="price" [(ngModel)]="carDetails.price" required min="1">
             </div>
             
-            <textarea name="description" id="description" cols="35" rows="4" placeholder="Description..." [(ngModel)]="carDetails.description">{{carDetails.description}}</textarea>
+            <textarea name="description" id="description" cols="35" rows="4" placeholder="Description..." [(ngModel)]="carDetails.description" required>{{carDetails.description}}</textarea>
 
             <div class="phone-number">
-                <input type="number" name="phone-number" id="phone-number" placeholder="Phone number..." [(ngModel)]="carDetails.phoneNumber">
+                <input type="number" name="phone-number" id="phone-number" placeholder="Phone number..." [(ngModel)]="carDetails.phoneNumber" required pattern="[0-9]+">
             </div>
 
         </div>
             <div class="edit-btn">
-                <input type="submit" value="EDIT">
+                <input type="submit" value="EDIT" [disabled]="!carForm.valid">
             </div>
     </form>
 </div>
