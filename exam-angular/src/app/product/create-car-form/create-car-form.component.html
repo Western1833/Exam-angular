@@ -81,13 +81,13 @@
             </div>
 
             <div class="price">
-                <input type="number" placeholder="Price" name="price" id="price" ngModel required>
+                <input type="number" placeholder="Price" name="price" id="price" ngModel required min="0">
             </div>
             
             <textarea name="description" id="description" cols="35" rows="4" placeholder="Description..." ngModel required></textarea>
 
             <div class="phone-number">
-                <input type="text" name="phoneNumber" id="phone-number" placeholder="Phone number..." ngModel required>
+                <input type="text" name="phoneNumber" id="phone-number" placeholder="Phone number..." ngModel required pattern="[0-9]+">
             </div>
 
         </div>

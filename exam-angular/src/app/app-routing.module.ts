@@ -15,7 +15,7 @@ import { AuthGuardForAuthUsersService } from './services/auth-guard-for-auth-use
 const routes: Routes = [{path: '', component: LastThreeProductsComponent},
   {path: 'catalog', component: AllCarsComponent},
   {path: 'my-cars', component: MyCarsComponent, canActivate: [AuthGuardService]},
-  {path: 'login', component: LoginComponent},
+  {path: 'login', component: LoginComponent, canActivate: [AuthGuardForAuthUsersService]},
   {path: 'register', component: RegisterComponent, canActivate: [AuthGuardForAuthUsersService]},
   {path: 'add-car', component: CreateCarFormComponent, canActivate: [AuthGuardService]},
   {path: 'details/:id', component: DetailsComponent},
