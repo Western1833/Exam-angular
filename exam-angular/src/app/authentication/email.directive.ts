@@ -25,7 +25,7 @@ export class EmailDirective implements Validator, OnChanges{
   }
 
   validate(control: AbstractControl): ValidationErrors | null {
-    return EmailDirective.emailValidator(control); // Call the static emailValidator method
+    return EmailDirective.emailValidator(control);
   }
 
   static emailValidator(control: AbstractControl): ValidationErrors | null {

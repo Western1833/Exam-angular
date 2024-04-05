@@ -8,9 +8,4 @@ export interface Car {
   phoneNumber: string;
   _ownerId: string;
   _id: string;
-//   likes: string[]
-//   comments: {
-//     comment: string;
-//     userId: string;
-//   }[];
 }

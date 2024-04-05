@@ -20,8 +20,6 @@ export class CreateCarFormComponent {
     phoneNumber: '',
     _ownerId: '',
     _id: ''
-    // likes: [],
-    // comments: []//
   };
 
   constructor(private addCarService: AddCarService, private authService: AuthService) { }
@@ -42,7 +40,6 @@ export class CreateCarFormComponent {
       _ownerId: '',
       _id: ''
     };
-    console.log(carData)
 
     this.addCarService.addCar(carData).subscribe({
       next: () => {
