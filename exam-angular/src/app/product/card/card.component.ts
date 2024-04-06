@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { DetailsService } from 'src/app/services/details.service';
 import { Car } from 'src/interfaces/car.interface';
 
 @Component({
@@ -10,7 +9,7 @@ import { Car } from 'src/interfaces/car.interface';
 })
 export class CardComponent {
 
-  constructor(private detailsService: DetailsService, private router: Router) {}
+  constructor(private router: Router) {}
 
   @Input() car: Car = {
     imageUrl: '',
@@ -19,7 +18,7 @@ export class CardComponent {
     price: null,
     year: '',
     description: '',
-    phoneNumber: '',
+    phoneNumber: null,
     _ownerId: '',
     _id: ''
   };

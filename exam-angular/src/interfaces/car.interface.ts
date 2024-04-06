@@ -5,7 +5,7 @@ export interface Car {
   year: string;
   price: number | null;
   description: string;
-  phoneNumber: string;
+  phoneNumber: number | null;
   _ownerId: string;
   _id: string;
 }

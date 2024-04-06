@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DetailsService } from 'src/app/services/details.service';
-import { environment } from 'src/environments/environment.development';
 import { Car } from 'src/interfaces/car.interface';
 
 @Component({
@@ -24,6 +23,9 @@ export class EditComponent implements OnInit{
   }
 
   onSubmit(): void {
+    if(this.carDetails?.price! <= 0 || this.carDetails?.phoneNumber! <= 0){
+      throw new Error("Price or phone number can't be negative numbers!");
+    }
     this.route.params.subscribe(params => {
       const id = params['id'];
       this.detailsService.edit(id, this.carDetails!).subscribe(() => {

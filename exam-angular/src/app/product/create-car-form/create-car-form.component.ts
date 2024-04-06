@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AddCarService } from 'src/app/services/add-car.service';
-import { AuthService } from 'src/app/services/auth.service';
 import { Car } from 'src/interfaces/car.interface';
 
 @Component({
@@ -17,12 +17,12 @@ export class CreateCarFormComponent {
     year: '',
     price: null,
     description: '',
-    phoneNumber: '',
+    phoneNumber: null,
     _ownerId: '',
     _id: ''
   };
 
-  constructor(private addCarService: AddCarService, private authService: AuthService) { }
+  constructor(private addCarService: AddCarService, private router: Router) { }
 
 
   onSubmit(form: NgForm) {
@@ -41,6 +41,10 @@ export class CreateCarFormComponent {
       _id: ''
     };
 
+    if(carData.price! <= 0 || carData.phoneNumber! <= 0){
+      throw new Error("Price or phone number can't be negative numbers!")
+    }
+
     this.addCarService.addCar(carData).subscribe({
       next: () => {
         form.setValue({
@@ -50,8 +54,9 @@ export class CreateCarFormComponent {
           'year': '',
           'price': null,
           'description': '',
-          'phoneNumber': ''
+          'phoneNumber': null
         });
+        this.router.navigate(['/catalog']);
       },
       error: (err) => {
         console.error('Error adding car:', err);
