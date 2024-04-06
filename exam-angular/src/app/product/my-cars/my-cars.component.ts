@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { MyCarsService } from 'src/app/services/my-cars.service';
 import { Car } from 'src/interfaces/car.interface';
 
@@ -7,15 +8,24 @@ import { Car } from 'src/interfaces/car.interface';
   templateUrl: './my-cars.component.html',
   styleUrls: ['./my-cars.component.css']
 })
-export class MyCarsComponent implements OnInit{
+export class MyCarsComponent implements OnInit, OnDestroy {
   cars: Car[] = [];
 
-constructor (private api: MyCarsService) {}
+  myCarsSubscription: Subscription | undefined;
 
-ngOnInit(): void {
+  constructor(private api: MyCarsService) { }
 
-  this.api.getMyCars().subscribe((cars: any) => {
-    this.cars = Object.values(cars);
-  })
-}
+  ngOnDestroy(): void {
+    this.myCarsSubscription?.unsubscribe();
+  }
+
+  ngOnInit(): void {
+    if (this.myCarsSubscription) {
+      this.myCarsSubscription.unsubscribe();
+    }
+
+    this.myCarsSubscription = this.api.getMyCars().subscribe((cars: Car[]) => {
+      this.cars = Object.values(cars);
+    })
+  }
 }

@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { AddCarService } from 'src/app/services/add-car.service';
 import { Car } from 'src/interfaces/car.interface';
 
@@ -9,7 +10,7 @@ import { Car } from 'src/interfaces/car.interface';
   templateUrl: './create-car-form.component.html',
   styleUrls: ['./create-car-form.component.css'],
 })
-export class CreateCarFormComponent {
+export class CreateCarFormComponent implements OnDestroy{
   car: Car = {
     imageUrl: '',
     brand: '',
@@ -22,7 +23,15 @@ export class CreateCarFormComponent {
     _id: ''
   };
 
+  private addCarSubscription: Subscription | undefined;
+
   constructor(private addCarService: AddCarService, private router: Router) { }
+
+  ngOnDestroy(): void {
+    if (this.addCarSubscription) {
+      this.addCarSubscription.unsubscribe();
+    }
+  }
 
 
   onSubmit(form: NgForm) {
@@ -45,7 +54,7 @@ export class CreateCarFormComponent {
       throw new Error("Price or phone number can't be negative numbers!")
     }
 
-    this.addCarService.addCar(carData).subscribe({
+    this.addCarSubscription = this.addCarService.addCar(carData).subscribe({
       next: () => {
         form.setValue({
           'imageUrl': '',

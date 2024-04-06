@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { DetailsService } from 'src/app/services/details.service';
@@ -9,7 +9,7 @@ import { Car } from 'src/interfaces/car.interface';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent implements OnInit{
+export class DetailsComponent implements OnInit, OnDestroy{
   showPopup: boolean = false;
   carId: string =  '';
   carDetails: Car | undefined;

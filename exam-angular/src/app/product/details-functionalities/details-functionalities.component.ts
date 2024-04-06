@@ -1,20 +1,23 @@
-import { Component, ElementRef, HostListener, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { DetailsService } from 'src/app/services/details.service';
 import { LikesService } from 'src/app/services/likes.service';
 import { Car } from 'src/interfaces/car.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupForDeleteCarComponent } from '../popup-for-delete-car/popup-for-delete-car.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-details-functionalities',
   templateUrl: './details-functionalities.component.html',
   styleUrls: ['./details-functionalities.component.css']
 })
-export class DetailsFunctionalitiesComponent implements OnChanges, OnInit {
+export class DetailsFunctionalitiesComponent implements OnChanges, OnInit, OnDestroy {
   showPopup: boolean = false;
 
   @Input() carDetails: Car | undefined;
+
+  detailsFunctSubscription: Subscription[] = [];
 
   isAuthenticated: boolean = false;
   isOwner: boolean = false;
@@ -26,6 +29,10 @@ export class DetailsFunctionalitiesComponent implements OnChanges, OnInit {
 
   constructor(private elementRef: ElementRef, private detailsService: DetailsService,
     private router: Router, private likesService: LikesService, public dialog: MatDialog) { }
+
+  ngOnDestroy(): void {
+    this.detailsFunctSubscription.forEach(sub => sub.unsubscribe());
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if ('carDetails' in changes) {
@@ -62,12 +69,13 @@ export class DetailsFunctionalitiesComponent implements OnChanges, OnInit {
       data: 'Are you sure you want to delete this car?',
       panelClass: 'wrapper-popup'
     });
-  
-    dialogRef.afterClosed().subscribe(result => {
+
+    const sub = dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.onDelete();
       }
     });
+    this.detailsFunctSubscription.push(sub);
   }
 
   onDelete() {
@@ -76,15 +84,17 @@ export class DetailsFunctionalitiesComponent implements OnChanges, OnInit {
       return;
     }
 
-    this.detailsService.delete(id!).subscribe(() => {
+    const sub = this.detailsService.delete(id!).subscribe(() => {
       this.router.navigate(['/catalog']);
-    })
+    });
+    this.detailsFunctSubscription.push(sub);
   }
 
   onLikeClick() {
-    this.likesService.sendLike(this.carDetails!._id, this.username).subscribe(() => {
+    const sub = this.likesService.sendLike(this.carDetails!._id, this.username).subscribe(() => {
       this.fetchTotalLikes();
     });
+    this.detailsFunctSubscription.push(sub);
   }
 
   ngOnInit(): void {
@@ -95,19 +105,22 @@ export class DetailsFunctionalitiesComponent implements OnChanges, OnInit {
     const userDataString = localStorage.getItem('userData');
     const currentUser = JSON.parse(userDataString!);
     const currentUserId = currentUser?._id;
+
     if (this.carDetails) {
-      this.likesService.getAllLikes(this.carDetails._id).subscribe(objectLikes => {
+      const sub1 = this.likesService.getAllLikes(this.carDetails._id).subscribe(objectLikes => {
         const likes = JSON.stringify(objectLikes);
         this.totalLikes = Number(likes);
       });
-      this.likesService.hasLiked(this.carDetails._id, currentUserId).subscribe(res => {
+      const sub2 = this.likesService.hasLiked(this.carDetails._id, currentUserId).subscribe(res => {
         if(res !== 0){
           this.hasLiked = true;
         }
       });
-      this.likesService.getlikesData(this.carDetails._id).subscribe(res => {
+      const sub3 = this.likesService.getlikesData(this.carDetails._id).subscribe(res => {
          this.usernames =  (Object.entries(res)).map(item => item[1].username);
-      })
+      });
+
+      this.detailsFunctSubscription.push(sub1, sub2, sub3);
     }
   }
 }
