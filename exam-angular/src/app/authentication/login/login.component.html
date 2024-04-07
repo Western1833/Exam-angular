@@ -14,6 +14,9 @@
             </ng-container>
             <input type="submit" value="Login" [disabled]="form.invalid">
         </div>
+        <ng-container *ngIf="errorMessage">
+            <p class="error">{{errorMessage}}</p>
+        </ng-container>
         <div class="message">
             <p>Don't have an account?</p>
             <a routerLink="/register">Sign up</a>

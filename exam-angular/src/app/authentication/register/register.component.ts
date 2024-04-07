@@ -23,6 +23,8 @@ export class RegisterComponent {
     })
   })
 
+  errorMessage: string = '';
+
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthService){}
 
   register(): void{
@@ -30,11 +32,17 @@ export class RegisterComponent {
       return;
     }
 
-    const {email, username, passGroup: {password, rePass} = {}} = this.form.value;
+    const {email, username, passGroup: {password} = {}} = this.form.value;
 
     this.authService.register(email!, password!, username!).subscribe(() => {
       this.router.navigate(['/login']);
-    })
+    },error => {
+      if(error.status === 409){
+        this.errorMessage = 'Email already exists!';
+      }else{
+        this.errorMessage = 'Failed to register, please try again.';
+      }
+    });
   }
 
   emailValidator(control: AbstractControl): ValidationErrors | null {

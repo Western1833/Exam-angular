@@ -109,4 +109,7 @@
     line-height: 1;
     margin: 0;
     font-size: 1.15em;
+    background-color: black;
+    border-radius: 0.3em;
+    padding: 0.3em;
 }

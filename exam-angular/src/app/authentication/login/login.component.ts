@@ -10,6 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent {
 
+  errorMessage: string = '';
+
   constructor (private router: Router, private authService: AuthService) {}
 
   login(form: NgForm) {
@@ -22,6 +24,11 @@ export class LoginComponent {
       },
       error => {
         console.error('Login failed:', error);
+        if(error.status === 403){
+          this.errorMessage = 'Incorrect username or password, please try again.'
+        }else{
+          this.errorMessage = 'Login failed, please try again.'
+        }
       }
     );
   }
