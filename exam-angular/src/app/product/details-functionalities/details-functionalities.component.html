@@ -10,6 +10,6 @@
         <button type="button" class="submit-with-icon" *ngIf="isAuthenticated && !isOwner && !hasLiked" (click)="onLikeClick()">
             <img src="../../../assets/thumbsup.png" alt="Like"></button>
     </div>
-    <a [routerLink]="['/edit', carDetails?._id]" id="edit-link" *ngIf="isAuthenticated && isOwner">Edit</a>
+    <a [routerLink]="['/data/edit', carDetails?._id]" id="edit-link" *ngIf="isAuthenticated && isOwner">Edit</a>
     <a id="delete-link" *ngIf="isAuthenticated && isOwner" (click)="openConfirmationDialog()">Delete</a>
 </div>

@@ -26,6 +26,6 @@ export class CardComponent {
   onDetailsClick(): void {
     const id = this.car._id;
 
-    this.router.navigate(['/details', id]);
+    this.router.navigate(['/data/details', id]);
   }
 }

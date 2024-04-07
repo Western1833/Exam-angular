@@ -85,7 +85,7 @@ export class DetailsFunctionalitiesComponent implements OnChanges, OnInit, OnDes
     }
 
     const sub = this.detailsService.delete(id!).subscribe(() => {
-      this.router.navigate(['/catalog']);
+      this.router.navigate(['/data/catalog']);
     });
     this.detailsFunctSubscription.push(sub);
   }

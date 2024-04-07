@@ -9,10 +9,10 @@
         <ul>
             <li *ngIf="userDataInStorage"><span>Hello, {{userDataInStorage.username}}</span></li>
             <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/catalog">Catalog</a></li>
+            <li><a routerLink="/data/catalog">Catalog</a></li>
             <!-- logged in users -->
-            <li *ngIf="userDataInStorage"><a routerLink="/add-car">Add car</a></li>
-            <li *ngIf="userDataInStorage"><a routerLink="/my-cars">My cars</a></li>
+            <li *ngIf="userDataInStorage"><a routerLink="/data/add-car">Add car</a></li>
+            <li *ngIf="userDataInStorage"><a routerLink="/data/my-cars">My cars</a></li>
             <li *ngIf="userDataInStorage"><a (click)="logout()" routerLink="/logout">Logout</a></li>
             <!-- logged out users -->
             <li *ngIf="!userDataInStorage"><a routerLink="/login">Login</a></li>

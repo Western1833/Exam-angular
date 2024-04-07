@@ -65,7 +65,7 @@ export class CreateCarFormComponent implements OnDestroy{
           'description': '',
           'phoneNumber': null
         });
-        this.router.navigate(['/catalog']);
+        this.router.navigate(['/data/catalog']);
       },
       error: (err) => {
         console.error('Error adding car:', err);

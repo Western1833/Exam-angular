@@ -41,7 +41,7 @@ export class EditComponent implements OnInit, OnDestroy{
      this.editCarSubscription =  this.route.params.subscribe(params => {
       const id = params['id'];
       this.detailsService.edit(id, this.carDetails!).subscribe(() => {
-        this.router.navigateByUrl(`details/${id}`);
+        this.router.navigateByUrl(`/data/details/${id}`);
       })
     })
   }

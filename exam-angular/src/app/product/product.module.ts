@@ -12,6 +12,7 @@ import { MyCarsComponent } from './my-cars/my-cars.component';
 import { DetailsFunctionalitiesComponent } from './details-functionalities/details-functionalities.component';
 import { PopupForDeleteCarComponent } from './popup-for-delete-car/popup-for-delete-car.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AppRoutingModuleForProducts } from './app-routing-product.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     PopupForDeleteCarComponent,
   ],
   imports: [
-    AppRoutingModule,
+    AppRoutingModuleForProducts,
     CommonModule,
     FormsModule,
     MatDialogModule
