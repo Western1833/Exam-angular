@@ -12,6 +12,8 @@ import { Car } from 'src/interfaces/car.interface';
 export class EditComponent implements OnInit, OnDestroy{
   carDetails: Car | undefined;
 
+  carModels: string[] = [];
+
   private editCarSubscription: Subscription | undefined;
 
   constructor(private detailsService: DetailsService, private route: ActivatedRoute, private router: Router) {}
@@ -32,6 +34,19 @@ export class EditComponent implements OnInit, OnDestroy{
         this.carDetails = res;
       })
     })
+  }
+
+  updateModels(brand: string) {
+    const modelsMap: { [key: string]: string[] } = {
+      Audi: ['A3', 'A4', 'A6', 'A8'],
+      BMW: ['1 Series', '3 Series', '5 Series', '7 Series'],
+      Mercedes: ['A Class', 'B Class', 'C Class', 'E Class', 'S Class'],
+      Honda: ['Accord', 'Civic', 'Jazz'],
+      Opel: ['Astra', 'Corsa', 'Insignia'],
+      Mazda: ['3', '6']
+    };
+
+    this.carModels = modelsMap[brand] || [];
   }
 
   onSubmit(): void {

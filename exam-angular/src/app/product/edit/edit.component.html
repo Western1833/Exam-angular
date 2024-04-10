@@ -6,36 +6,21 @@
                 <input type="text" id="image-select" placeholder="Image url..." name="imageUrl" ngModel [(ngModel)]="carDetails.imageUrl" required>
             </div>
             <div class="brand">
-                <select id="car-brand" name="car-brand" [(ngModel)]="carDetails.brand" required>
+                <select id="car-brand" name="brand" ngModel (change)="updateModels($any($event.target).value)" required>
                     <option value="">Select Brand</option>
                     <option value="Audi">Audi</option>
                     <option value="BMW">BMW</option>
                     <option value="Honda">Honda</option>
                     <option value="Mazda">Mazda</option>
-                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Mercedes">Mercedes-Benz</option>
                     <option value="Opel">Opel</option>
-                    <option value="Peugeot">Peugeot</option>
-                    <option value="Porsche">Porsche</option>
-                    <option value="Subaru">Subaru</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="VW">VW</option>
                 </select>
             </div>
             
             <div class="model">
-                <select id="car-model" name="car-model" [(ngModel)]="carDetails.model" required>
+                <select id="car-model" name="model" ngModel required>
                     <option value="">Select Model</option>
-                    <option value="530">530</option>
-                    <option value="E320">E320</option>
-                    <option value="A6">A6</option>
-                    <option value="Civic">Civic</option>
-                    <option value="6">6</option>
-                    <option value="Impreza">Impreza</option>
-                    <option value="Tundra">Tundra</option>
-                    <option value="308">308</option>
-                    <option value="Macan">Macan</option>
-                    <option value="Touareg">Touareg</option>
-                    <option value="Insignia">Insignia</option>
+                    <option *ngFor="let model of carModels" value="model">{{model}}</option>
                 </select>
             </div>
 

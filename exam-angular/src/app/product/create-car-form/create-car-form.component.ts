@@ -11,6 +11,9 @@ import { Car } from 'src/interfaces/car.interface';
   styleUrls: ['./create-car-form.component.css'],
 })
 export class CreateCarFormComponent implements OnDestroy{
+
+  carModels: string[] = [];
+
   car: Car = {
     imageUrl: '',
     brand: '',
@@ -33,6 +36,18 @@ export class CreateCarFormComponent implements OnDestroy{
     }
   }
 
+  updateModels(brand: string) {
+    const modelsMap: { [key: string]: string[] } = {
+      Audi: ['A3', 'A4', 'A6', 'A8'],
+      BMW: ['1 Series', '3 Series', '5 Series', '7 Series'],
+      Mercedes: ['A Class', 'B Class', 'C Class', 'E Class', 'S Class'],
+      Honda: ['Accord', 'Civic', 'Jazz'],
+      Opel: ['Astra', 'Corsa', 'Insignia'],
+      Mazda: ['3', '6']
+    };
+
+    this.carModels = modelsMap[brand] || [];
+  }
 
   onSubmit(form: NgForm) {
 
