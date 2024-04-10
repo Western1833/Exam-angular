@@ -1340,80 +1340,79 @@
     };
     var seedData = {
         cars:{
-            "2d0a9f68-681f-4fad-800d-d0172c72299d": {
-            "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-            "imageUrl": "https://cdn3.focus.bg/autodata/i/bmw/5er/5er-e60/large/e3cc377b35adf71eb67e8a8e977f93eb.jpg",
-            "brand": "BMW",
-            "model": "530",
-            "year": "2006",
-            "price": 7600,
-            "description": "Car",
-            "phoneNumber": "0897775544",
-            "_createdOn": 1712271035462,
-            "_id": "2d0a9f68-681f-4fad-800d-d0172c72299d"
+            "3fc2b98a-79c9-4f97-9f48-b9fadcf0f2f4": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "imageUrl": "https://cdn3.focus.bg/autodata/i/bmw/5er/5er-e60/large/e3cc377b35adf71eb67e8a8e977f93eb.jpg",
+                "brand": "BMW",
+                "model": "530",
+                "year": "2007",
+                "price": 7600,
+                "description": "Car",
+                "phoneNumber": "0897775544",
+                "_createdOn": 1712773926196,
+                "_id": "3fc2b98a-79c9-4f97-9f48-b9fadcf0f2f4"
+            },
+            "d2c3f855-9912-470d-9964-0a9cfe98d36e": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "imageUrl": "https://cdn3.focus.bg/autodata/i/mercedes-benz/e-klasse/e-klasse-w211/large/dbae147fa35511782a9f87a0e75ff0c4.jpg",
+                "brand": "Mercedes-Benz",
+                "model": "E320",
+                "year": "2006",
+                "price": 7500,
+                "description": "Car",
+                "phoneNumber": "0889765678",
+                "_createdOn": 1712773971043,
+                "_id": "d2c3f855-9912-470d-9964-0a9cfe98d36e"
+            },
+            "dfd59b94-ae80-47a5-ad4e-42b6cba90ac9": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "imageUrl": "https://cdn3.focus.bg/autodata/i/audi/a6/a6-4fc6/large/d335277ab5310e3300bd24c6e9559dfd.jpg",
+                "brand": "Audi",
+                "model": "A6",
+                "year": "2007",
+                "price": 7700,
+                "description": "Car",
+                "phoneNumber": "0899665544",
+                "_createdOn": 1712774004852,
+                "_id": "dfd59b94-ae80-47a5-ad4e-42b6cba90ac9"
+            },
+            "3c323535-0c08-4576-86fd-df44dca35f9a": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "imageUrl": "https://cdn3.focus.bg/autodata/i/honda/civic/civic-viii-sedan/large/1c9c5d17ba1d60b7f3f5d0a608f06f30.jpg",
+                "brand": "Honda",
+                "model": "Civic",
+                "year": "2008",
+                "price": 7000,
+                "description": "Car",
+                "phoneNumber": "0888334455",
+                "_createdOn": 1712774079778,
+                "_id": "3c323535-0c08-4576-86fd-df44dca35f9a"
+            },
+            "bcb97a61-d724-40f7-a3c7-5f812f807301": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "imageUrl": "https://cdn3.focus.bg/autodata/i/opel/insignia/insignia-sports-tourer/large/a7c1554987be9195a9564c25e738ea23.jpg",
+                "brand": "Opel",
+                "model": "Insignia",
+                "year": "2008",
+                "price": 8300,
+                "description": "Car",
+                "phoneNumber": "0897876776",
+                "_createdOn": 1712774122323,
+                "_id": "bcb97a61-d724-40f7-a3c7-5f812f807301"
+            },
+            "3aaaba28-a121-4911-9924-178ed15d4ded": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "imageUrl": "https://cdn3.focus.bg/autodata/i/mazda/mazda-6/mazda-6-ii-hatchback-gh/large/9b2159673f84ff342e60119090dfd47d.jpg",
+                "brand": "Mazda",
+                "model": "6",
+                "year": "2010",
+                "price": 8600,
+                "description": "Car",
+                "phoneNumber": "0882445566",
+                "_createdOn": 1712774183547,
+                "_id": "3aaaba28-a121-4911-9924-178ed15d4ded"
+            }
         },
-        "e0bcdcf2-0bfa-4f06-b661-94812cc28056": {
-            "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-            "imageUrl": "https://cdn3.focus.bg/autodata/i/mercedes-benz/e-klasse/e-klasse-w211/large/dbae147fa35511782a9f87a0e75ff0c4.jpg",
-            "brand": "Mercedes-Benz",
-            "model": "E320",
-            "year": "2005",
-            "price": 7500,
-            "description": "Car",
-            "phoneNumber": "0896553343",
-            "_createdOn": 1712271082460,
-            "_id": "e0bcdcf2-0bfa-4f06-b661-94812cc28056"
-        },
-        "7b341a40-7e29-4e4c-9e35-008ce0665c0d": {
-            "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-            "imageUrl": "https://cdn3.focus.bg/autodata/i/audi/a6/a6-avant-4fc6/large/09f1f47d0a1317a57f81347fb33c8744.jpg",
-            "brand": "Audi",
-            "model": "A6",
-            "year": "2006",
-            "price": 7700,
-            "description": "Car",
-            "phoneNumber": "0898776655",
-            "_createdOn": 1712271138499,
-            "_id": "7b341a40-7e29-4e4c-9e35-008ce0665c0d"
-        },
-        "6fb3c778-d144-473f-a3a6-d2037ff9ecc1": {
-            "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-            "imageUrl": "https://cdn3.focus.bg/autodata/i/honda/civic/civic-viii-sedan/large/1c9c5d17ba1d60b7f3f5d0a608f06f30.jpg",
-            "brand": "Honda",
-            "model": "Civic",
-            "year": "2007",
-            "price": 7000,
-            "description": "Car",
-            "phoneNumber": "0899775544",
-            "_createdOn": 1712271205917,
-            "_id": "6fb3c778-d144-473f-a3a6-d2037ff9ecc1"
-        },
-        "5294bd28-7262-4aa5-a3d6-26775deed5d0": {
-            "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-            "imageUrl": "https://cdn3.focus.bg/autodata/i/mazda/mazda-6/mazda-6-ii-hatchback-gh/large/9b2159673f84ff342e60119090dfd47d.jpg",
-            "brand": "Mazda",
-            "model": "6",
-            "year": "2009",
-            "price": 8000,
-            "description": "Car",
-            "phoneNumber": "0877121314",
-            "_createdOn": 1712271259723,
-            "_id": "5294bd28-7262-4aa5-a3d6-26775deed5d0"
-        },
-        "220c3e75-ed96-4c58-8c84-f008d3ac31d2": {
-            "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-            "imageUrl": "https://cdn3.focus.bg/autodata/i/opel/insignia/insignia-sports-tourer/large/a7c1554987be9195a9564c25e738ea23.jpg",
-            "brand": "Opel",
-            "model": "Insignia",
-            "year": "2010",
-            "price": 8200,
-            "description": "Car",
-            "phoneNumber": "0898765675",
-            "_createdOn": 1712271304762,
-            "_id": "220c3e75-ed96-4c58-8c84-f008d3ac31d2"
-        }
-    
-    },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
