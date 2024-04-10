@@ -26,6 +26,11 @@ export class EditComponent implements OnInit, OnDestroy{
     this.route.params.subscribe(params => {
       const id = params['id'];
 
+      setTimeout(() => {
+        this.updateModels(this.carDetails?.brand!);
+      }, 500);
+
+
       if (this.editCarSubscription) {
         this.editCarSubscription.unsubscribe();
       }

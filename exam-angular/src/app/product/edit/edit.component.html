@@ -6,7 +6,7 @@
                 <input type="text" id="image-select" placeholder="Image url..." name="imageUrl" ngModel [(ngModel)]="carDetails.imageUrl" required>
             </div>
             <div class="brand">
-                <select id="car-brand" name="brand" ngModel (change)="updateModels($any($event.target).value)" required>
+                <select id="car-brand" name="brand" [(ngModel)]="carDetails.brand" (change)="updateModels($any($event.target).value)" required>
                     <option value="">Select Brand</option>
                     <option value="Audi">Audi</option>
                     <option value="BMW">BMW</option>
@@ -18,7 +18,7 @@
             </div>
             
             <div class="model">
-                <select id="car-model" name="model" ngModel required>
+                <select id="car-model" name="model" [(ngModel)]="carDetails.model" required>
                     <option value="">Select Model</option>
                     <option *ngFor="let model of carModels" value="model">{{model}}</option>
                 </select>
