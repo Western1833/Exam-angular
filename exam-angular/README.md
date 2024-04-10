@@ -14,7 +14,7 @@ On home page are displayed the last 3 added cars.
 
 Unauthozied user can see homepage, catalog, login, register, and details for each car, he can see the likes for each car, but can't place his own like, in order to do so he must make an account.
 
-Authorized user sees home, catalog, details with edit and delete buttons only if he is the creator of the ad, he can like a car unless its his own, he also can see his own cars ads inside myCars.
+Authorized user sees home, catalog, details with edit and delete buttons only if he is the creator of the ad, he can like a car unless its his own, he also can see his own cars ads inside myCars page.
 
 When 'likes' is pressed a popup shows giving all users who liked the car.
 
