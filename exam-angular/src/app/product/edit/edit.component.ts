@@ -38,6 +38,11 @@ export class EditComponent implements OnInit, OnDestroy{
     if(this.carDetails?.price! <= 0 || this.carDetails?.phoneNumber! <= 0){
       throw new Error("Price or phone number can't be negative numbers!");
     }
+
+    if(!this.carDetails?.brand || !this.carDetails?.imageUrl || !this.carDetails?.model || !this.carDetails?.phoneNumber || !this.carDetails?.description || !this.carDetails?.price || !this.carDetails?.year){
+      throw new Error('All fields are required!');
+    }
+
      this.editCarSubscription =  this.route.params.subscribe(params => {
       const id = params['id'];
       this.detailsService.edit(id, this.carDetails!).subscribe(() => {

@@ -54,6 +54,10 @@ export class CreateCarFormComponent implements OnDestroy{
       throw new Error("Price or phone number can't be negative numbers!")
     }
 
+    if(!carData.brand || !carData.imageUrl || !carData.model || !carData.phoneNumber || !carData.description || !carData.price || !carData.year){
+      throw new Error('All fields are required!');
+    }
+
     this.addCarSubscription = this.addCarService.addCar(carData).subscribe({
       next: () => {
         form.setValue({
