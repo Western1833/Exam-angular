@@ -20,7 +20,7 @@
             <div class="model">
                 <select id="car-model" name="model" [(ngModel)]="carDetails.model" required>
                     <option value="">Select Model</option>
-                    <option *ngFor="let model of carModels" value="model">{{model}}</option>
+                    <option *ngFor="let model of carModels" [ngValue]="model">{{model}}</option>
                 </select>
             </div>
 

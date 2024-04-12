@@ -22,23 +22,21 @@ export class EditComponent implements OnInit, OnDestroy{
     this.editCarSubscription?.unsubscribe();
   }
 
+
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const id = params['id'];
-
-      setTimeout(() => {
-        this.updateModels(this.carDetails?.brand!);
-      }, 500);
-
-
+  
       if (this.editCarSubscription) {
         this.editCarSubscription.unsubscribe();
       }
       
       this.editCarSubscription = this.detailsService.carDetails(id).subscribe(res => {
         this.carDetails = res;
-      })
-    })
+        this.updateModels(this.carDetails?.brand!);
+      });
+    });
   }
 
   updateModels(brand: string) {
